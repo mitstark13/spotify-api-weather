@@ -1,5 +1,6 @@
 //variables
 $headerBlue: #000077;
+$yellow: #ffeb66;
 
 
 * {
@@ -110,8 +111,9 @@ main {
 
 	h1 {
 		text-align: center;
+		color: $yellow;
 		font-weight: bold;
-		font-size: 60px;
+		font-size: 34px;
 		margin-top: 20px;
 		margin-bottom: 50px;
 	}
@@ -119,11 +121,15 @@ main {
 		width: 558px;
 		font-size: 28px;
 		margin: 0 auto;
-
-		.currentLocation {
-			display: inline-block;
+		
+		button {
+			background-color: $yellow;
+			border: none;
 			font-size: 28px;
 			height: 70px;
+		}
+		.currentLocation {
+			display: inline-block;
 			width: 200px;
 		}
 		p {
@@ -136,10 +142,16 @@ main {
 			width: 150px;
 		}
 		.newCity {
-			font-size: 28px;
-			height: 70px;
 			width: 70px;
 		}
+	}
+	i {
+		display: block;
+		text-align: center;
+		margin: 130px auto 0;
+		font-size: 18px;
+		color: red;
+		opacity: 0;
 	}
 }
 

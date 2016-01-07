@@ -73,18 +73,22 @@ main {
       width: 150px; }
   .splash h1 {
     text-align: center;
+    color: #ffeb66;
     font-weight: bold;
-    font-size: 60px;
+    font-size: 34px;
     margin-top: 20px;
     margin-bottom: 50px; }
   .splash .options {
     width: 558px;
     font-size: 28px;
     margin: 0 auto; }
+    .splash .options button {
+      background-color: #ffeb66;
+      border: none;
+      font-size: 28px;
+      height: 70px; }
     .splash .options .currentLocation {
       display: inline-block;
-      font-size: 28px;
-      height: 70px;
       width: 200px; }
     .splash .options p {
       margin: 0 40px;
@@ -94,9 +98,14 @@ main {
       height: 70px;
       width: 150px; }
     .splash .options .newCity {
-      font-size: 28px;
-      height: 70px;
       width: 70px; }
+  .splash i {
+    display: block;
+    text-align: center;
+    margin: 130px auto 0;
+    font-size: 18px;
+    color: red;
+    opacity: 0; }
 
 .weather {
   position: absolute;
