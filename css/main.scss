@@ -1,0 +1,49 @@
+//variables
+$headerBlue: #000077;
+
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+header {
+	height: 60px;
+	width: 100vw;
+	background-color: $headerBlue;
+	padding: 10px 60px;
+
+	img {
+		display: inline-block;
+		height: 40px;
+	}
+
+	input, button {
+		float: right;
+		height: 40px;
+		border: none;
+		margin-left: 30px;
+	}
+
+	button {
+		width: 100px;
+	}
+}
+
+main {
+	padding: 50px 100px;
+}
+
+.splash {
+	display: none;
+	height: 100vh;
+	width: 100vw;
+	background-color: red;
+}
+
+aside {
+	float: right;
+
+}

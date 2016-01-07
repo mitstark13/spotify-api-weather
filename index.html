@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+	<title>WxMx</title>
+</head>
+
+<body>
+
+	<header>
+		<img src="#" alt="logo">
+		<button>Update</button>
+		<input type="text" placeholder="state">
+		<input type="text" placeholder="city">
+	</header>
+
+	<main>
+		<section class='splash'>
+			<h1>Welcome to WeatherMix!</h1>
+			<div class='options'>
+				<button class='currentLocation'>Use current location</button>
+				<p>OR</p>
+				<button class='zip'>Enter zip code</button>
+			</div>
+		</section>
+
+		<section class='playlist'>
+			<div id='results'></div>
+		</section>
+
+		<aside>
+			<img src="#" alt="weatherImg" class='weatherImg'>
+			<b>35</b>
+			<img src="#" alt="f" class='f'>
+		</aside>
+	</main>
+
+</body>
+
+<script id="results-template" type="text/x-handlebars-template">
+	<h1><b class='city'></b><b class='weather'></b><b class='time'></b> Mix</h1>
+    <section class='playlist'>
+    	<ul>
+	    	{{#each.track}}
+	    		<li>
+	    			<p>{{track}}</p>
+	    			<img src='#' alt='preview' class='preview'>
+	    			<img src='#' alt='remove' class='remove'>
+	    		</li>
+	    	{{/each}}
+    	</ul>
+    </section>
+</script>
+
+<script src='js/main.js'></script>
+</html>

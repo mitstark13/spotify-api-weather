@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden; }
+
+header {
+  height: 60px;
+  width: 100vw;
+  background-color: #000077;
+  padding: 10px 60px; }
+  header img {
+    display: inline-block;
+    height: 40px; }
+  header input, header button {
+    float: right;
+    height: 40px;
+    border: none;
+    margin-left: 30px; }
+  header button {
+    width: 100px; }
+
+main {
+  padding: 50px 100px; }
+
+.splash {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  background-color: red; }
+
+aside {
+  float: right; }
+
+/*# sourceMappingURL=main.css.map */
