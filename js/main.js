@@ -40,8 +40,7 @@ $('.newCity').click(function() {
 function getWeatherInfo() {
   $.ajax({
     url: "http://api.openweathermap.org/data/2.5/weather?lat="+ latLong.lat +"&lon="+ latLong.lng + "&" + weatherApiKey,
-    contentType: "application/json",
-    dataType: "json",
+    jsonp:"showWeatherInfo",
     success: showWeatherInfo
   });
   console.log("http://api.openweathermap.org/data/2.5/weather?lat="+ latLong.lat +"&lon="+ latLong.lng + "&" + weatherApiKey)
@@ -67,9 +66,9 @@ getLocation();
 var dance = 0.5;
 var energy = 0.5;
 var familiar = 0.64;
-var genre = 'rap';
+var genre = 'country';
 var genre2 = 'pop';
-var variety = ((Math.random() * 0.7) + 0.3).toFixed(2);
+var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 
 function weatherToMusic() {
   if ((weather == 'Rain') || (weather == 'Snow')) {
@@ -130,7 +129,7 @@ function getSpotifyPlaylist() {
       },
       success: function (response) {
           console.log(response);
-          // resultsPlaceholder.innerHTML = template(response);
+          resultsPlaceholder.innerHTML = template(response);
       }
   });
   console.log(variety);

@@ -87,9 +87,9 @@
 
 <script id="results-template" type="text/x-handlebars-template">
     	<ul>
-	    	{{#each.track}}
+	    	{{#each response.songs}}
 	    		<li>
-	    			<p>{{track}}</p>
+	    			<p>{{title}} {{artist_name}}</p>
 	    			<img src='#' alt='preview' class='preview'>
 	    			<img src='#' alt='remove' class='remove'>
 	    		</li>
