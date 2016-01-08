@@ -1,7 +1,7 @@
 //variables
-$headerBlue: #000077;
+$headerBlue: #384c99;
 $yellow: #ffeb66;
-
+$lightBlue: #bcd4fb;
 
 * {
 	box-sizing: border-box;
@@ -10,7 +10,7 @@ $yellow: #ffeb66;
 	overflow: hidden;
 }
 html {
-	font-family: "Nexa", sans-serif;
+	font-family: "lato", sans-serif;
 }
 
 .hide {
@@ -96,41 +96,58 @@ main {
 	position: relative;
 	height: 100vh;
 	width: 100vw;
+	background-image: url('../img/splash.jpg');
+	background-size: cover;
 	
 	.logo {
-	height: 150px;
-    width: 150px;
+	height: 170px;
+    width: 540px;
     margin: 100px 50% 0;
     transform: translateX(-50%);
 
 		img {
-			height: 150px;
-			width: 150px;
+			height: 170px;
+			width: 540px;
 		}
 	}
 
 	h1 {
 		text-align: center;
 		color: $yellow;
-		font-weight: bold;
-		font-size: 34px;
+		letter-spacing: .2em;
+		font-weight: 300;
+		font-size: 1.4em;
 		margin-top: 20px;
-		margin-bottom: 50px;
+		margin-bottom: 30px;
+	}
+
+	b {
+		font-size: 36px;
+		color: white;
+		text-align: center;
+		display: block;
 	}
 	.options {
-		width: 558px;
+		height: 400px;
+		width: 50%;
 		font-size: 28px;
 		margin: 0 auto;
+		position: relative;
 		
 		button {
 			background-color: $yellow;
 			border: none;
-			font-size: 28px;
-			height: 70px;
+			color: $headerBlue;
+			display: block;
+			position: relative;
+			text-align: center;
 		}
 		.currentLocation {
-			display: inline-block;
-			width: 200px;
+			width: 280px;
+			height: 50px;
+			margin: 0 auto;
+			font-size: 28px;
+			position: relative;
 		}
 		p {
 			margin: 0 40px;

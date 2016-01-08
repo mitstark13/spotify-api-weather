@@ -1,52 +1,65 @@
+/* line 6, main.scss */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   overflow: hidden; }
 
+/* line 12, main.scss */
 html {
-  font-family: "Nexa", sans-serif; }
+  font-family: "lato", sans-serif; }
 
+/* line 16, main.scss */
 .hide {
   display: none; }
 
+/* line 20, main.scss */
 header {
   height: 90px;
   width: 100vw;
-  background-color: #000077;
+  background-color: #384c99;
   padding: 20px 60px; }
+  /* line 26, main.scss */
   header img {
     display: inline-block;
     height: 40px;
     background-color: pink; }
+  /* line 32, main.scss */
   header input, header button {
     float: right;
     height: 40px;
     border: none;
     margin-left: 30px; }
+  /* line 39, main.scss */
   header button {
     width: 100px; }
 
+/* line 44, main.scss */
 main {
   padding: 40px 80px; }
 
+/* line 50, main.scss */
 .playlist .title {
   font-size: 55px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 60px; }
+/* line 57, main.scss */
 .playlist #results {
   position: relative;
   width: 57%;
   margin-left: 180px; }
+  /* line 64, main.scss */
   .playlist #results ul li {
     border-bottom: 2px solid black;
     padding: 13px 0px 13px 20px;
     height: 60px;
     width: 100%; }
+    /* line 70, main.scss */
     .playlist #results ul li p {
       font-size: 30px;
       display: inline; }
+    /* line 75, main.scss */
     .playlist #results ul li img {
       vertical-align: middle;
       height: 35px;
@@ -55,50 +68,78 @@ main {
       background-color: green;
       display: inline;
       float: right; }
+    /* line 85, main.scss */
     .playlist #results ul li img:first-of-type {
       margin-left: 15px;
       background-color: yellow; }
 
+/* line 94, main.scss */
 .splash {
   position: relative;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  background-image: url("../img/splash.jpg");
+  background-size: cover; }
+  /* line 102, main.scss */
   .splash .logo {
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 540px;
     margin: 100px 50% 0;
     transform: translateX(-50%); }
+    /* line 108, main.scss */
     .splash .logo img {
-      height: 150px;
-      width: 150px; }
+      height: 170px;
+      width: 540px; }
+  /* line 114, main.scss */
   .splash h1 {
     text-align: center;
     color: #ffeb66;
-    font-weight: bold;
-    font-size: 34px;
+    letter-spacing: .2em;
+    font-weight: 300;
+    font-size: 1.4em;
     margin-top: 20px;
-    margin-bottom: 50px; }
+    margin-bottom: 30px; }
+  /* line 124, main.scss */
+  .splash b {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    display: block; }
+  /* line 130, main.scss */
   .splash .options {
-    width: 558px;
+    height: 400px;
+    width: 50%;
     font-size: 28px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
+    /* line 137, main.scss */
     .splash .options button {
       background-color: #ffeb66;
       border: none;
-      font-size: 28px;
-      height: 70px; }
+      color: #384c99;
+      display: block;
+      position: relative;
+      text-align: center; }
+    /* line 145, main.scss */
     .splash .options .currentLocation {
-      display: inline-block;
-      width: 200px; }
+      width: 280px;
+      height: 50px;
+      margin: 0 auto;
+      font-size: 28px;
+      position: relative; }
+    /* line 152, main.scss */
     .splash .options p {
       margin: 0 40px;
       display: inline; }
+    /* line 156, main.scss */
     .splash .options input {
       font-size: 28px;
       height: 70px;
       width: 150px; }
+    /* line 161, main.scss */
     .splash .options .newCity {
       width: 70px; }
+  /* line 165, main.scss */
   .splash i {
     display: block;
     text-align: center;
@@ -107,31 +148,37 @@ main {
     color: red;
     opacity: 0; }
 
+/* line 175, main.scss */
 .weather {
   position: absolute;
   right: 80px;
   top: 250px; }
+  /* line 180, main.scss */
   .weather .weatherImg {
     display: block;
     height: 200px;
     margin-bottom: 30px;
     background-color: red; }
+  /* line 187, main.scss */
   .weather b {
     display: inline-block;
     transform: translateY(50%);
     font-size: 80px;
     font-weight: bold;
     margin-right: 20px; }
+  /* line 195, main.scss */
   .weather .f {
     vertical-align: middle;
     height: 150px;
     width: 150px;
     background-color: blue; }
 
+/* line 203, main.scss */
 .albumCover {
   position: absolute;
   top: 280px;
   left: 80px; }
+  /* line 208, main.scss */
   .albumCover img {
     height: 150px;
     width: 150px;
