@@ -84,7 +84,7 @@ main {
   .splash .logo {
     height: 170px;
     width: 540px;
-    margin: 100px 50% 0;
+    margin: 60px 50% 0;
     transform: translateX(-50%); }
     /* line 108, main.scss */
     .splash .logo img {
@@ -98,21 +98,22 @@ main {
     font-weight: 300;
     font-size: 1.4em;
     margin-top: 20px;
-    margin-bottom: 30px; }
+    margin-bottom: 20px; }
   /* line 124, main.scss */
   .splash b {
     font-size: 36px;
     color: white;
     text-align: center;
-    display: block; }
-  /* line 130, main.scss */
+    display: block;
+    margin-bottom: 20px; }
+  /* line 131, main.scss */
   .splash .options {
     height: 400px;
-    width: 50%;
+    width: 60%;
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-    /* line 137, main.scss */
+    /* line 138, main.scss */
     .splash .options button {
       background-color: #ffeb66;
       border: none;
@@ -120,26 +121,49 @@ main {
       display: block;
       position: relative;
       text-align: center; }
-    /* line 145, main.scss */
+    /* line 146, main.scss */
     .splash .options .currentLocation {
       width: 280px;
       height: 50px;
       margin: 0 auto;
       font-size: 28px;
       position: relative; }
-    /* line 152, main.scss */
+    /* line 153, main.scss */
     .splash .options p {
-      margin: 0 40px;
-      display: inline; }
-    /* line 156, main.scss */
+      text-align: center;
+      margin: -10px auto;
+      color: #ffeb66; }
+    /* line 161, main.scss */
+    .splash .options .base {
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      margin-top: 10px; }
+    /* line 170, main.scss */
+    .splash .options .searchbox {
+      width: 430px;
+      height: 200px;
+      margin: 0 auto; }
+    /* line 177, main.scss */
     .splash .options input {
       font-size: 28px;
       height: 70px;
-      width: 150px; }
-    /* line 161, main.scss */
+      width: 350px;
+      margin: 0 auto;
+      float: left;
+      background: white url("../img/search.png") no-repeat left center;
+      background-size: 50px;
+      padding-left: 50px; }
+    /* line 187, main.scss */
     .splash .options .newCity {
-      width: 70px; }
-  /* line 165, main.scss */
+      width: 70px;
+      height: 70px;
+      display: inline-block;
+      position: relative;
+      font-weight: 700;
+      font-size: 24px; }
+  /* line 196, main.scss */
   .splash i {
     display: block;
     text-align: center;
@@ -148,37 +172,37 @@ main {
     color: red;
     opacity: 0; }
 
-/* line 175, main.scss */
+/* line 206, main.scss */
 .weather {
   position: absolute;
   right: 80px;
   top: 250px; }
-  /* line 180, main.scss */
+  /* line 211, main.scss */
   .weather .weatherImg {
     display: block;
     height: 200px;
     margin-bottom: 30px;
     background-color: red; }
-  /* line 187, main.scss */
+  /* line 218, main.scss */
   .weather b {
     display: inline-block;
     transform: translateY(50%);
     font-size: 80px;
     font-weight: bold;
     margin-right: 20px; }
-  /* line 195, main.scss */
+  /* line 226, main.scss */
   .weather .f {
     vertical-align: middle;
     height: 150px;
     width: 150px;
     background-color: blue; }
 
-/* line 203, main.scss */
+/* line 234, main.scss */
 .albumCover {
   position: absolute;
   top: 280px;
   left: 80px; }
-  /* line 208, main.scss */
+  /* line 239, main.scss */
   .albumCover img {
     height: 150px;
     width: 150px;

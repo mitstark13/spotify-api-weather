@@ -102,7 +102,7 @@ main {
 	.logo {
 	height: 170px;
     width: 540px;
-    margin: 100px 50% 0;
+    margin: 60px 50% 0;
     transform: translateX(-50%);
 
 		img {
@@ -118,7 +118,7 @@ main {
 		font-weight: 300;
 		font-size: 1.4em;
 		margin-top: 20px;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 	}
 
 	b {
@@ -126,10 +126,11 @@ main {
 		color: white;
 		text-align: center;
 		display: block;
+		margin-bottom: 20px;
 	}
 	.options {
 		height: 400px;
-		width: 50%;
+		width: 60%;
 		font-size: 28px;
 		margin: 0 auto;
 		position: relative;
@@ -150,16 +151,46 @@ main {
 			position: relative;
 		}
 		p {
-			margin: 0 40px;
-			display: inline;
+		
+			text-align: center;
+			
+			margin: -10px auto;
+			color: $yellow;
 		}
+		
+		.base {
+			color: white;
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 10px;
+			margin-top: 10px;
+		}
+		
+		
+			.searchbox {
+			width: 430px;
+			height: 200px;
+			margin: 0 auto;
+		}
+
+
 		input {
 			font-size: 28px;
 			height: 70px;
-			width: 150px;
+			width: 350px;
+			margin: 0 auto;
+			float: left;
+			background: white url('../img/search.png') no-repeat left center;
+			background-size: 50px;
+			padding-left: 50px
 		}
 		.newCity {
 			width: 70px;
+			height: 70px;
+			display: inline-block;
+			position: relative;
+			font-weight: 700;
+			font-size: 24px;
 		}
 	}
 	i {
