@@ -5,7 +5,7 @@
   overflow: hidden; }
 
 html {
-  font-family: "Nexa", sans-serif; }
+  font-family: "lato", sans-serif; }
 
 .hide {
   display: none; }
@@ -13,7 +13,7 @@ html {
 header {
   height: 90px;
   width: 100vw;
-  background-color: #000077;
+  background-color: #384c99;
   padding: 20px 60px; }
   header img {
     display: inline-block;
@@ -62,43 +62,80 @@ main {
 .splash {
   position: relative;
   height: 100vh;
-  width: 100vw; }
+  width: 100vw;
+  background-image: url("../img/splash.jpg");
+  background-size: cover; }
   .splash .logo {
-    height: 150px;
-    width: 150px;
-    margin: 100px 50% 0;
+    height: 170px;
+    width: 540px;
+    margin: 60px 50% 0;
     transform: translateX(-50%); }
     .splash .logo img {
-      height: 150px;
-      width: 150px; }
+      height: 170px;
+      width: 540px; }
   .splash h1 {
     text-align: center;
     color: #ffeb66;
-    font-weight: bold;
-    font-size: 34px;
+    letter-spacing: .2em;
+    font-weight: 300;
+    font-size: 1.4em;
     margin-top: 20px;
-    margin-bottom: 50px; }
+    margin-bottom: 20px; }
+  .splash b {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    display: block;
+    margin-bottom: 20px; }
   .splash .options {
-    width: 558px;
+    height: 400px;
+    width: 60%;
     font-size: 28px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    position: relative; }
     .splash .options button {
       background-color: #ffeb66;
       border: none;
-      font-size: 28px;
-      height: 70px; }
+      color: #384c99;
+      display: block;
+      position: relative;
+      text-align: center; }
     .splash .options .currentLocation {
-      display: inline-block;
-      width: 200px; }
+      width: 280px;
+      height: 50px;
+      margin: 0 auto;
+      font-size: 28px;
+      position: relative; }
     .splash .options p {
-      margin: 0 40px;
-      display: inline; }
+      text-align: center;
+      margin: -10px auto;
+      color: #ffeb66; }
+    .splash .options .base {
+      color: white;
+      font-size: 18px;
+      font-weight: 300;
+      margin-bottom: 10px;
+      margin-top: 10px; }
+    .splash .options .searchbox {
+      width: 430px;
+      height: 200px;
+      margin: 0 auto; }
     .splash .options input {
       font-size: 28px;
       height: 70px;
-      width: 150px; }
+      width: 350px;
+      margin: 0 auto;
+      float: left;
+      background: white url("../img/search.png") no-repeat left center;
+      background-size: 50px;
+      padding-left: 50px; }
     .splash .options .newCity {
-      width: 70px; }
+      width: 70px;
+      height: 70px;
+      display: inline-block;
+      position: relative;
+      font-weight: 700;
+      font-size: 24px; }
   .splash i {
     display: block;
     text-align: center;
