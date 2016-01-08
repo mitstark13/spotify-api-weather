@@ -1,175 +1,56 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  overflow: hidden; }
+/*
+Error: Invalid CSS after "": expected selector, was "<<<<<<< HEAD"
+        on line 17 of /Users/Stark/Desktop/spotify/spotify-api-weather/css/main.scss
 
-html {
-  font-family: "lato", sans-serif; }
+12: html {
+13: 	font-family: "lato", sans-serif;
+14: 	color: white;
+15: }
+16: 
+17: <<<<<<< HEAD
+18: // .hide {
+19: // 	display: none;
+20: // }
+21: =======
+22: .hide {
 
-header {
-  height: 90px;
-  width: 100vw;
-  background-color: #384c99;
-  padding: 20px 60px; }
-  header img {
-    display: inline-block;
-    height: 40px;
-    background-color: pink; }
-  header input, header button {
-    float: right;
-    height: 40px;
-    border: none;
-    margin-left: 30px; }
-  header button {
-    width: 100px; }
-
-main {
-  padding: 40px 80px; }
-
-.playlist .title {
-  font-size: 55px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 60px; }
-.playlist #results {
-  position: relative;
-  width: 57%;
-  margin-left: 180px; }
-  .playlist #results ul li {
-    border-bottom: 2px solid black;
-    padding: 13px 0px 13px 20px;
-    height: 60px;
-    width: 100%; }
-    .playlist #results ul li p {
-      font-size: 30px;
-      display: inline; }
-    .playlist #results ul li img {
-      vertical-align: middle;
-      height: 35px;
-      width: 35px;
-      border-radius: 50%;
-      background-color: green;
-      display: inline;
-      float: right; }
-    .playlist #results ul li img:first-of-type {
-      margin-left: 15px;
-      background-color: yellow; }
-
-.splash {
-  display: none;
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  background-image: url("../img/splash.jpg");
-  background-size: cover; }
-  .splash .logo {
-    height: 170px;
-    width: 540px;
-    margin: 60px 50% 0;
-    transform: translateX(-50%); }
-    .splash .logo img {
-      height: 170px;
-      width: 540px; }
-  .splash h1 {
-    text-align: center;
-    color: #ffeb66;
-    letter-spacing: .2em;
-    font-weight: 300;
-    font-size: 1.4em;
-    margin-top: 20px;
-    margin-bottom: 20px; }
-  .splash b {
-    font-size: 36px;
-    color: white;
-    text-align: center;
-    display: block;
-    margin-bottom: 20px; }
-  .splash .options {
-    height: 400px;
-    width: 60%;
-    font-size: 28px;
-    margin: 0 auto;
-    position: relative; }
-    .splash .options button {
-      background-color: #ffeb66;
-      border: none;
-      color: #384c99;
-      display: block;
-      position: relative;
-      text-align: center; }
-    .splash .options .currentLocation {
-      width: 280px;
-      height: 50px;
-      margin: 0 auto;
-      font-size: 28px;
-      position: relative; }
-    .splash .options p {
-      text-align: center;
-      margin: -10px auto;
-      color: #ffeb66; }
-    .splash .options .base {
-      color: white;
-      font-size: 18px;
-      font-weight: 300;
-      margin-bottom: 10px;
-      margin-top: 10px; }
-    .splash .options .searchbox {
-      width: 430px;
-      height: 200px;
-      margin: 0 auto; }
-    .splash .options input {
-      font-size: 28px;
-      height: 70px;
-      width: 350px;
-      margin: 0 auto;
-      float: left;
-      background: white url("../img/search.png") no-repeat left center;
-      background-size: 50px;
-      padding-left: 50px; }
-    .splash .options .newCity {
-      width: 70px;
-      height: 70px;
-      display: inline-block;
-      position: relative;
-      font-weight: 700;
-      font-size: 24px; }
-  .splash i {
-    display: block;
-    text-align: center;
-    margin: 130px auto 0;
-    font-size: 18px;
-    color: red;
-    opacity: 0; }
-
-.weather {
-  position: absolute;
-  right: 80px;
-  top: 250px; }
-  .weather .weatherImg {
-    display: block;
-    height: 200px;
-    margin-bottom: 30px;
-    background-color: red; }
-  .weather b {
-    display: inline-block;
-    transform: translateY(50%);
-    font-size: 80px;
-    font-weight: bold;
-    margin-right: 20px; }
-  .weather .f {
-    vertical-align: middle;
-    height: 150px;
-    width: 150px;
-    background-color: blue; }
-
-.albumCover {
-  position: absolute;
-  top: 280px;
-  left: 80px; }
-  .albumCover img {
-    height: 150px;
-    width: 150px;
-    background-color: orange; }
-
-/*# sourceMappingURL=main.css.map */
+Backtrace:
+/Users/Stark/Desktop/spotify/spotify-api-weather/css/main.scss:17
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/parser.rb:1081:in `expr!'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/scss/static_parser.rb:20:in `parse_selector'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:414:in `visit_rule'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `block in with_base'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:115:in `with_frame'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/stack.rb:79:in `with_base'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:396:in `run'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:62:in `process_result'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/rubygems/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/bin/sass:18:in `load'
+/Users/Stark/Desktop/Koala.app/Contents/Resources/app.nw/bin/sass:18:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"\": expected selector, was \"<<<<<<< HEAD\"\A         on line 17 of /Users/Stark/Desktop/spotify/spotify-api-weather/css/main.scss\A \A 12: html {\A 13: 	font-family: \"lato\", sans-serif;\A 14: 	color: white;\A 15: }\A 16: \A 17: <<<<<<< HEAD\A 18: // .hide {\A 19: // 	display: none;\A 20: // }\A 21: =======\A 22: .hide {"; }
