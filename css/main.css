@@ -1,41 +1,60 @@
+/* line 6, main.scss */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
+  -moz-transition-property: all;
+  -moz-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6); }
 
+/* line 18, main.scss */
 html {
   font-family: "lato", sans-serif;
   color: white; }
 
+/* line 23, main.scss */
+.hide {
+  display: none; }
+
+/* line 27, main.scss */
 header {
   height: 90px;
   width: 100vw;
   background-color: #384c99;
   padding: 20px 60px; }
+  /* line 33, main.scss */
   header img {
     display: inline-block;
     height: 50px; }
+  /* line 39, main.scss */
   header input, header button {
     float: right;
     height: 40px;
     border: none;
     margin-left: 30px; }
+  /* line 46, main.scss */
   header button {
     width: 100px; }
 
+/* line 51, main.scss */
 main {
   padding: 40px 80px;
   background-image: url("../img/cloudbackground.jpg");
   background-size: cover;
   min-height: 800px; }
 
+/* line 60, main.scss */
 .playlist .title {
   font-size: 55px;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
   color: white; }
+/* line 68, main.scss */
 .playlist .save-spotify {
   background-color: #ffeb66;
   border: none;
@@ -49,65 +68,97 @@ main {
   font-size: 24px;
   position: relative;
   font-weight: 400; }
-.playlist .action-button {
+/* line 83, main.scss */
+.playlist .btn {
   position: relative;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 25px;
-  color: #384c99;
-  width: 320px;
-  text-decoration: none;
-  background-color: #ffeb66;
-  border-bottom: 5px solid #D1B358;
-  text-shadow: 0px -1px #D1B358;
   display: block;
+  width: 320px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
   text-align: center;
-  margin: 0 auto; }
-.playlist .animate {
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s; }
-.playlist .action-button:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  border-bottom: 1px solid;
-  margin-bottom: 4px; }
-.playlist #results {
+  text-transform: uppercase;
+  color: #ffeb66;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; }
+/* line 100, main.scss */
+.playlist .btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px; }
+/* line 105, main.scss */
+.playlist .btn svg rect {
+  fill: none;
+  stroke: #ffeb66;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+/* line 116, main.scss */
+.btn:hover svg rect {
+  stroke-width: 5;
+  stroke-dasharray: 35, 550;
+  stroke-dashoffset: 60; }
+
+/* line 123, main.scss */
+.btn:hover {
+  color: #ffeb66;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: transparent; }
+
+/* line 134, main.scss */
+#results {
   position: relative;
   width: 57%;
   margin-left: 240px; }
-  .playlist #results ul li {
+  /* line 141, main.scss */
+  #results ul li {
     border-bottom: 1px solid #384c99;
     padding: 8px 20px 8px 20px;
     height: 40px;
     width: 100%; }
-    .playlist #results ul li p {
+    /* line 147, main.scss */
+    #results ul li p {
       font-size: 20px;
       display: inline; }
-    .playlist #results ul li img {
+    /* line 152, main.scss */
+    #results ul li img {
       vertical-align: middle;
       height: auto;
       width: 25px;
       border-radius: 50%;
       display: inline;
       float: right; }
-    .playlist #results ul li img:first-of-type {
+    /* line 161, main.scss */
+    #results ul li img:first-of-type {
       margin-left: 15px; }
 
+/* line 170, main.scss */
 .splash {
-  display: none;
   position: relative;
   height: 100vh;
   width: 100vw;
   background-image: url("../img/splash.jpg");
   background-size: cover; }
+  /* line 178, main.scss */
   .splash .logo {
     height: 170px;
     width: 540px;
     margin: 60px 50% 0;
     transform: translateX(-50%); }
+    /* line 184, main.scss */
     .splash .logo img {
       height: 170px;
       width: 540px; }
+  /* line 190, main.scss */
   .splash h1 {
     text-align: center;
     color: #ffeb66;
@@ -116,78 +167,135 @@ main {
     font-size: 1.4em;
     margin-top: 20px;
     margin-bottom: 20px; }
+  /* line 200, main.scss */
   .splash b {
     font-size: 36px;
     color: white;
     text-align: center;
     display: block;
     margin-bottom: 20px; }
+  /* line 207, main.scss */
   .splash .options {
     height: 400px;
     width: 60%;
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-    .splash .options button {
-      background-color: #ffeb66;
-      border: none;
-      color: #384c99;
+    /* line 214, main.scss */
+    .splash .options .btn2 {
+      position: relative;
       display: block;
-      position: relative;
-      text-align: center; }
-    .splash .options .currentLocation {
-      width: 280px;
+      width: 320px;
       height: 50px;
-      margin: 0 auto;
-      font-size: 28px;
-      position: relative; }
-    .splash .options p {
+      font-size: 12px;
+      line-height: 50px;
       text-align: center;
-      margin: -10px auto;
-      color: #ffeb66; }
-    .splash .options .base {
-      color: white;
-      font-size: 18px;
-      font-weight: 300;
-      margin-bottom: 10px;
-      margin-top: 10px; }
-    .splash .options .searchbox {
-      width: 430px;
-      height: 200px;
-      margin: 0 auto; }
-    .splash .options input {
-      font-size: 28px;
-      height: 70px;
-      width: 350px;
+      text-transform: uppercase;
+      color: #ffeb66;
+      cursor: pointer;
+      overflow: hidden;
       margin: 0 auto;
-      float: left;
-      background: white url("../img/search.png") no-repeat left center;
-      background-size: 50px;
-      padding-left: 50px; }
-    .splash .options .newCity {
-      width: 70px;
-      height: 70px;
-      display: inline-block;
-      position: relative;
-      font-weight: 700;
-      font-size: 24px; }
-  .splash i {
-    display: block;
-    text-align: center;
-    margin: 130px auto 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; }
+    /* line 231, main.scss */
+    .splash .options .btn2 svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px; }
+    /* line 236, main.scss */
+    .splash .options .btn2 svg rect {
+      fill: none;
+      stroke: #ffeb66;
+      stroke-width: 1;
+      stroke-dasharray: 422, 0;
+      -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  /* line 247, main.scss */
+  .splash .btn2:hover svg rect {
+    stroke-width: 5;
+    stroke-dasharray: 35, 550;
+    stroke-dashoffset: 60; }
+  /* line 254, main.scss */
+  .splash .btn2:hover {
+    color: #ffeb66;
     font-size: 18px;
-    color: red;
-    opacity: 0; }
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color: transparent; }
+  /* line 262, main.scss */
+  .splash button {
+    background-color: #ffeb66;
+    border: none;
+    color: #384c99;
+    display: block;
+    position: relative;
+    text-align: center; }
+  /* line 270, main.scss */
+  .splash .currentLocation {
+    width: 280px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 28px;
+    position: relative; }
+  /* line 277, main.scss */
+  .splash p {
+    text-align: center;
+    margin: -10px auto;
+    color: #ffeb66; }
+  /* line 285, main.scss */
+  .splash .base {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 10px; }
+  /* line 294, main.scss */
+  .splash .searchbox {
+    width: 430px;
+    height: 200px;
+    margin: 0 auto; }
+  /* line 301, main.scss */
+  .splash input {
+    font-size: 28px;
+    height: 70px;
+    width: 350px;
+    margin: 0 auto;
+    float: left;
+    background: white url("../img/search.png") no-repeat left center;
+    background-size: 50px;
+    padding-left: 50px; }
+  /* line 311, main.scss */
+  .splash .newCity {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    font-size: 24px; }
 
+/* line 320, main.scss */
+i {
+  display: block;
+  text-align: center;
+  margin: 130px auto 0;
+  font-size: 18px;
+  color: red;
+  opacity: 0; }
+
+/* line 330, main.scss */
 .weather {
   position: absolute;
   right: 80px;
   top: 200px; }
+  /* line 335, main.scss */
   .weather .weatherImg {
     display: block;
     width: 200px;
     height: auto;
     margin-bottom: 30px; }
+  /* line 342, main.scss */
   .weather b {
     display: inline-block;
     transform: translateY(50%);
@@ -195,15 +303,18 @@ main {
     font-weight: 300;
     margin-right: 20px;
     color: white; }
+  /* line 351, main.scss */
   .weather .f {
     vertical-align: middle;
     height: auto;
     width: 100px; }
 
+/* line 358, main.scss */
 .albumCover {
   position: absolute;
   top: 280px;
   left: 80px; }
+  /* line 363, main.scss */
   .albumCover img {
     height: 150px;
     width: 150px; }
