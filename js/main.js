@@ -5,9 +5,10 @@ $( document ).ajaxStart(function() {
 });
 
 //Splash screen buttons and inputs
-$('.splash .currentLocation').click(function() {
+$('.splash .btn2').click(function() {
   $('.splash').css('display', 'none');
   $('section, aside, header').removeClass('hide');
+  getWeatherInfoCity(cityChoice);
   weatherToMusic();
 });
 
@@ -37,7 +38,7 @@ var weatherURL = "http://api.openweathermap.org/data/2.5/weather?"
 var weatherApiKey = "appid=316a2b2cad6f5950838210609c099692";
 
 var latLong = [];
-var currentCity;
+var cityChoice;
 var currentCity = true;
 
 getLocation();
@@ -61,6 +62,7 @@ function getWeatherInfo() {
   });
   console.log("http://api.openweathermap.org/data/2.5/weather?lat="+ latLong.lat +"&lon="+ latLong.lng + "&" + weatherApiKey)
 }
+
 function getWeatherInfoCity(newCity) {
   $.ajax({
     url: "http://api.openweathermap.org/data/2.5/weather?q="+ newCity + "&" + weatherApiKey,
@@ -74,6 +76,7 @@ function getWeatherInfoCity(newCity) {
 function showWeatherInfo(data) {
   console.log(data);
   $('.currentCity').html(data.name);
+  cityChoice = data.name;
   temp = ((data.main.temp * (9 / 5)) - 459.67).toFixed(0);
   $('.weather b').html(temp);
   weather = data.weather[0].main;
@@ -84,8 +87,13 @@ function showWeatherInfo(data) {
   }
 
   if (weather == 'Clear') {
-    $('.weatherImg').attr('src', 'img/sun.png');
-    $('main').css('background-image', 'url(../img/sunbackground.jpg)')
+    if (hour < 18) {
+      $('.weatherImg').attr('src', 'img/sun.png');
+      $('main').css('background-image', 'url(../img/sunbackground.jpg)')
+    } else {
+      $('.weatherImg').attr('src', 'img/moon.png');
+      $('main').css('background-image', 'url(../img/nightbackground.jpg)')
+    }
   }else if (weather == 'Rain') {
     $('.weatherImg').attr('src', 'img/rain.png');
     $('main').css('background-image', 'url(../img/rainbackground.jpg)')
@@ -95,6 +103,9 @@ function showWeatherInfo(data) {
   }else if (weather == 'Snow') {
     $('.weatherImg').attr('src', 'img/snow.png');
     $('main').css('background-image', 'url(../img/snowbackground.jpg)')
+  }else if (weather == 'Fog') {
+    $('.weatherImg').attr('src', 'img/cloud.png');
+    $('main').css('background-image', 'url(../img/cloudbackground.jpg)')
   }
   setTitle(data.name);
 }
