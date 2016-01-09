@@ -8,6 +8,9 @@ html {
   font-family: "lato", sans-serif;
   color: white; }
 
+.hide {
+  display: none; }
+
 header {
   height: 90px;
   width: 100vw;
@@ -94,7 +97,6 @@ main {
       margin-left: 15px; }
 
 .splash {
-  display: none;
   position: relative;
   height: 100vh;
   width: 100vw;
@@ -207,5 +209,15 @@ main {
   .albumCover img {
     height: 150px;
     width: 150px; }
+
+.loading {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: url("http://assets.materialup.com/uploads/1993300c-1d8a-4e3f-8f1b-544d4ecfb2fa/abd072f63be81c7167dca2bcf8f39bfc.gif") 50% 50% no-repeat;
+  background-size: cover; }
 
 /*# sourceMappingURL=main.css.map */

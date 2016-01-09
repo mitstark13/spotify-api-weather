@@ -1,3 +1,30 @@
+// Loading GIF
+
+$( document ).ajaxStart(function() {
+    $('.loading').fadeIn(1000);
+});
+
+//Splash screen buttons and inputs
+$('.splash .currentLocation').click(function() {
+  $('.splash').css('display', 'none');
+  $('section, aside, header').removeClass('hide');
+  weatherToMusic();
+});
+
+$('.newCity').click(function() {
+  if ($('.options input').val().indexOf(',') != -1) {
+    var newCity = $('.options input').val();
+    $('.splash i').css('opacity', '0');
+    getWeatherInfoCity($('.options input').val());
+    $('.splash').css('display', 'none');
+    $('section, aside, header').removeClass('hide');
+    weatherToMusic();
+  } else {
+    $('.splash i').css('opacity', '1');
+  };
+})
+
+
 var templateSource = document.getElementById('results-template').innerHTML,
     template = Handlebars.compile(templateSource),
     resultsPlaceholder = document.getElementById('results'),
@@ -16,26 +43,19 @@ var weatherApiKey = "appid=316a2b2cad6f5950838210609c099692";
 
 var latLong = [];
 var currentCity;
-var newCity;
+
+getLocation();
 
 function getLocation() {
   if(navigator.geolocation) {
     	navigator.geolocation.getCurrentPosition(function(position) {
+        console.log(position);
     		latLong.lat = position.coords.latitude;
     		latLong.lng = position.coords.longitude;
         getWeatherInfo();
     	});
   };
 };
-
-$('.newCity').click(function() {
-  if ($('.options input').val().indexOf(',') != -1) {
-    var newCity = $('.options input').val();
-    $('.splash i').css('opacity', '0');
-  } else {
-    $('.splash i').css('opacity', '1');
-  };
-})
 
 function getWeatherInfo() {
   $.ajax({
@@ -45,15 +65,38 @@ function getWeatherInfo() {
   });
   console.log("http://api.openweathermap.org/data/2.5/weather?lat="+ latLong.lat +"&lon="+ latLong.lng + "&" + weatherApiKey)
 }
+function getWeatherInfoCity(newCity) {
+  $.ajax({
+    url: "http://api.openweathermap.org/data/2.5/weather?q="+ newCity + "&" + weatherApiKey,
+    jsonp:"showWeatherInfo",
+    success: showWeatherInfo
+  });
+  console.log("http://api.openweathermap.org/data/2.5/weather?p="+ newCity + "&" + weatherApiKey)
+}
 
 function showWeatherInfo(data) {
   console.log(data);
   $('.currentCity').html(data.name);
-  temp = ((data.main.temp * (9 / 5)) - 459.67);
+  temp = ((data.main.temp * (9 / 5)) - 459.67).toFixed(0);
+  $('.weather b').html(temp);
   weather = data.weather[0].main;
   weatherDescription = data.weather[0].description;
   hour = new Date($.now()).getHours();
-  weatherToMusic();
+  $('.loading').fadeOut(1000);
+
+  if (weather == 'Clear') {
+    $('.weatherImg').attr('src', 'img/sun.png');
+    $('main').css('background-image', 'url(../img/sunbackground.jpg)')
+  }else if (weather == 'Rain') {
+    $('.weatherImg').attr('src', 'img/rain.png');
+    $('main').css('background-image', 'url(../img/rainbackground.jpg)')
+  }else if (weather == 'Clouds') {
+    $('.weatherImg').attr('src', 'img/cloud.png');
+    $('main').css('background-image', 'url(../img/cloudbackground.jpg)')
+  }else if (weather == 'Snow') {
+    $('.weatherImg').attr('src', 'img/snow.png');
+    $('main').css('background-image', 'url(../img/snowbackground.jpg)')
+  }
 }
 
 var temp;
@@ -61,13 +104,14 @@ var weather;
 var weatherDescription;
 var hour;
 
-getLocation();
+
+// getLocation();
 
 var dance = 0.5;
 var energy = 0.5;
 var familiar = 0.64;
-var genre = 'country';
-var genre2 = 'pop';
+var genre = 'rock';
+var genre2 = 'indie rock';
 var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 
 function weatherToMusic() {
@@ -112,6 +156,8 @@ function weatherToMusic() {
   getSpotifyPlaylist();
 }
 
+var previews = [];
+
 function getSpotifyPlaylist() {
   $.ajax({
       url: echoURL + echoApiKey + "&genre=" + genre + "&genre=" + genre2,
@@ -130,9 +176,10 @@ function getSpotifyPlaylist() {
       success: function (response) {
           console.log(response);
           resultsPlaceholder.innerHTML = template(response);
+          // previews.append()
       }
   });
   console.log(variety);
+  $('.loading').fadeOut(1000);
 }
-
 

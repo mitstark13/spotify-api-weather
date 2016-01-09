@@ -8,9 +8,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
 	<title>atmosphere</title>
 </head>
-
+<div class="loading"></div>
 <body>
-
+	
 	<header class='hide'>
 		<img src="img/atmosphere.png" alt="logo">
 		<button>Update</button>
@@ -78,19 +78,18 @@
 			<img src="#" alt="albumCover" id='albumCover'>
 		</aside>
 	</main>
-
 </body>
 
 <script id="weather-template" type="text/x-handlebars-template">
-	<h1><b class='city'></b><b class='weather'></b><b class='time'></b> Mix</h1>
+	<h1><b class='currentCity'></b><b class='weather'></b><b class='time'></b> Mix</h1>
 </script>
 
 <script id="results-template" type="text/x-handlebars-template">
     	<ul>
 	    	{{#each response.songs}}
 	    		<li>
-	    			<p>{{title}} {{artist_name}}</p>
-	    			<img src='img/delete.png' alt='preview' class='preview'>
+	    			<p>{{title}}</p>
+	    			<b class='artist'>{{artist_name}}</b>
 	    			<img src='img/play.png' alt='remove' class='remove'>
 	    		</li>
 	    	{{/each}}
