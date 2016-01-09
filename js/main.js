@@ -136,8 +136,8 @@ var hour;
 var dance = 0.5;
 var energy = 0.5;
 var familiar = 0.64;
-var genre = 'rock';
-var genre2 = 'indie rock';
+var genre = 'pop';
+var genre2 = 'rock';
 var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 
 function weatherToMusic() {
