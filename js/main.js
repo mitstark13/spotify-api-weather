@@ -24,16 +24,11 @@ $('.newCity').click(function() {
   };
 })
 
-
 var templateSource = document.getElementById('results-template').innerHTML,
     template = Handlebars.compile(templateSource),
     resultsPlaceholder = document.getElementById('results'),
     playingCssClass = 'playing',
     audioObject = null;
-
-var weatherSource = document.getElementById('weather-template').innerHTML,
-    weathertemplate = Handlebars.compile(weatherSource),
-    weatherPlaceholder = document.getElementById('title');
 
 var echoURL = "http://developer.echonest.com/api/v4/playlist/static?";
 var echoApiKey = "api_key=FIBUHDRKELAT3EEOJ";
@@ -43,6 +38,7 @@ var weatherApiKey = "appid=316a2b2cad6f5950838210609c099692";
 
 var latLong = [];
 var currentCity;
+var currentCity = true;
 
 getLocation();
 
@@ -71,6 +67,7 @@ function getWeatherInfoCity(newCity) {
     jsonp:"showWeatherInfo",
     success: showWeatherInfo
   });
+  currentCity = false;
   console.log("http://api.openweathermap.org/data/2.5/weather?p="+ newCity + "&" + weatherApiKey)
 }
 
@@ -82,7 +79,9 @@ function showWeatherInfo(data) {
   weather = data.weather[0].main;
   weatherDescription = data.weather[0].description;
   hour = new Date($.now()).getHours();
-  $('.loading').fadeOut(1000);
+  if (currentCity) {
+    $('.loading').fadeOut(1000);
+  }
 
   if (weather == 'Clear') {
     $('.weatherImg').attr('src', 'img/sun.png');
@@ -97,7 +96,23 @@ function showWeatherInfo(data) {
     $('.weatherImg').attr('src', 'img/snow.png');
     $('main').css('background-image', 'url(../img/snowbackground.jpg)')
   }
+  setTitle(data.name);
 }
+
+//Set Title
+function setTitle(city) {
+  if (hour < 12) {
+    time = "Morning";
+  } else if (hour < 18) {
+    time = "Afternoon";
+  } else if (hour < 22) {
+    time = "Evening"
+  } else {
+    time = "Late-Night"
+  }
+  $('.playlist .title').text(city + " " + time + ' ' + weather + ' Mix');
+}
+
 
 var temp;
 var weather;
