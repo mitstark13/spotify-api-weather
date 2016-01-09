@@ -8,6 +8,12 @@ $lightBlue: #bcd4fb;
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
+		-webkit-transition-property: all;
+	-webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
+	-moz-transition-property: all;
+	-moz-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100,50,21,6);
 }
 html {
 	font-family: "lato", sans-serif;
@@ -74,38 +80,56 @@ main {
 			font-weight: 400;
 	}
 
-	.action-button
-{
-	position: relative;
-	padding: 10px 20px;
-	border-radius: 4px;
-	font-size: 25px;
-	color: $headerBlue;
-	width: 320px;
-	text-decoration: none;	
-	background-color: $yellow;
-	border-bottom: 5px solid #D1B358;
-	text-shadow: 0px -1px #D1B358;
-	display: block;
-			
-			text-align: center;
-			
-			margin: 0 auto;
+	.btn {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $yellow;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,.1);
+  margin-bottom: 20px;	
+  
+}
+.btn svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 400px
+}
+.btn svg rect {
+  fill: none;
+  stroke: $yellow;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+  
+}
+.btn:hover svg rect {
+  stroke-width: 5;
+  stroke-dasharray: 35, 550;
+  stroke-dashoffset: 60;
+  
 }
 
-.animate
-{
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
+.btn:hover {
+  color: $yellow;
+  font-size:18px;
+  letter-spacing:1px;
+  font-weight:bold;
+  background-color: rgba(0,0,0,0)
 }
 
-.action-button:active
-{
-	transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
-	border-bottom: 1px solid;
-	margin-bottom: 4px;
-}
+
+	
 
 	#results {
 		position: relative;
@@ -141,7 +165,7 @@ main {
 			}
 		}
 	}
-}
+
 
 .splash {
 	// display: none;
@@ -186,6 +210,54 @@ main {
 		font-size: 28px;
 		margin: 0 auto;
 		position: relative;
+
+		.btn2 {
+  position: relative;
+  display: block;
+  width: 320px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $yellow;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,.1);
+  margin-bottom: 20px;	
+  
+}
+.btn2 svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 400px
+}
+.btn2 svg rect {
+  fill: none;
+  stroke: $yellow;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+  
+}
+.btn2:hover svg rect {
+  stroke-width: 5;
+  stroke-dasharray: 35, 550;
+  stroke-dashoffset: 60;
+  
+}
+
+.btn2:hover {
+  color: $yellow;
+  font-size:18px;
+  letter-spacing:1px;
+  font-weight:bold;
+  background-color: rgba(0,0,0,0)
+}
 		
 		button {
 			background-color: $yellow;
@@ -253,7 +325,7 @@ main {
 		color: red;
 		opacity: 0;
 	}
-}
+
 
 .weather {
 	position: absolute;

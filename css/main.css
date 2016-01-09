@@ -2,7 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6);
+  -moz-transition-property: all;
+  -moz-transition-duration: .2s;
+  -moz-transition-timing-function: cubic-bezier(100, 50, 21, 6); }
 
 html {
   font-family: "lato", sans-serif;
@@ -52,48 +58,67 @@ main {
   font-size: 24px;
   position: relative;
   font-weight: 400; }
-.playlist .action-button {
+.playlist .btn {
   position: relative;
-  padding: 10px 20px;
-  border-radius: 4px;
-  font-size: 25px;
-  color: #384c99;
-  width: 320px;
-  text-decoration: none;
-  background-color: #ffeb66;
-  border-bottom: 5px solid #D1B358;
-  text-shadow: 0px -1px #D1B358;
   display: block;
+  width: 320px;
+  height: 50px;
+  font-size: 12px;
+  line-height: 50px;
   text-align: center;
-  margin: 0 auto; }
-.playlist .animate {
-  transition: all 0.1s;
-  -webkit-transition: all 0.1s; }
-.playlist .action-button:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  border-bottom: 1px solid;
-  margin-bottom: 4px; }
-.playlist #results {
+  text-transform: uppercase;
+  color: #ffeb66;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; }
+.playlist .btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px; }
+.playlist .btn svg rect {
+  fill: none;
+  stroke: #ffeb66;
+  stroke-width: 1;
+  stroke-dasharray: 422, 0;
+  -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+
+.btn:hover svg rect {
+  stroke-width: 5;
+  stroke-dasharray: 35, 550;
+  stroke-dashoffset: 60; }
+
+.btn:hover {
+  color: #ffeb66;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background-color: transparent; }
+
+#results {
   position: relative;
   width: 57%;
   margin-left: 240px; }
-  .playlist #results ul li {
+  #results ul li {
     border-bottom: 1px solid #384c99;
     padding: 8px 20px 8px 20px;
     height: 40px;
     width: 100%; }
-    .playlist #results ul li p {
+    #results ul li p {
       font-size: 20px;
       display: inline; }
-    .playlist #results ul li img {
+    #results ul li img {
       vertical-align: middle;
       height: auto;
       width: 25px;
       border-radius: 50%;
       display: inline;
       float: right; }
-    .playlist #results ul li img:first-of-type {
+    #results ul li img:first-of-type {
       margin-left: 15px; }
 
 .splash {
@@ -130,56 +155,95 @@ main {
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-    .splash .options button {
-      background-color: #ffeb66;
-      border: none;
-      color: #384c99;
+    .splash .options .btn2 {
+      position: relative;
       display: block;
-      position: relative;
-      text-align: center; }
-    .splash .options .currentLocation {
-      width: 280px;
+      width: 320px;
       height: 50px;
-      margin: 0 auto;
-      font-size: 28px;
-      position: relative; }
-    .splash .options p {
+      font-size: 12px;
+      line-height: 50px;
       text-align: center;
-      margin: -10px auto;
-      color: #ffeb66; }
-    .splash .options .base {
-      color: white;
-      font-size: 18px;
-      font-weight: 300;
-      margin-bottom: 10px;
-      margin-top: 10px; }
-    .splash .options .searchbox {
-      width: 430px;
-      height: 200px;
-      margin: 0 auto; }
-    .splash .options input {
-      font-size: 28px;
-      height: 70px;
-      width: 350px;
+      text-transform: uppercase;
+      color: #ffeb66;
+      cursor: pointer;
+      overflow: hidden;
       margin: 0 auto;
-      float: left;
-      background: white url("../img/search.png") no-repeat left center;
-      background-size: 50px;
-      padding-left: 50px; }
-    .splash .options .newCity {
-      width: 70px;
-      height: 70px;
-      display: inline-block;
-      position: relative;
-      font-weight: 700;
-      font-size: 24px; }
-  .splash i {
-    display: block;
-    text-align: center;
-    margin: 130px auto 0;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; }
+    .splash .options .btn2 svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px; }
+    .splash .options .btn2 svg rect {
+      fill: none;
+      stroke: #ffeb66;
+      stroke-width: 1;
+      stroke-dasharray: 422, 0;
+      -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  .splash .btn2:hover svg rect {
+    stroke-width: 5;
+    stroke-dasharray: 35, 550;
+    stroke-dashoffset: 60; }
+  .splash .btn2:hover {
+    color: #ffeb66;
     font-size: 18px;
-    color: red;
-    opacity: 0; }
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color: transparent; }
+  .splash button {
+    background-color: #ffeb66;
+    border: none;
+    color: #384c99;
+    display: block;
+    position: relative;
+    text-align: center; }
+  .splash .currentLocation {
+    width: 280px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 28px;
+    position: relative; }
+  .splash p {
+    text-align: center;
+    margin: -10px auto;
+    color: #ffeb66; }
+  .splash .base {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    margin-top: 10px; }
+  .splash .searchbox {
+    width: 430px;
+    height: 200px;
+    margin: 0 auto; }
+  .splash input {
+    font-size: 28px;
+    height: 70px;
+    width: 350px;
+    margin: 0 auto;
+    float: left;
+    background: white url("../img/search.png") no-repeat left center;
+    background-size: 50px;
+    padding-left: 50px; }
+  .splash .newCity {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    position: relative;
+    font-weight: 700;
+    font-size: 24px; }
+
+i {
+  display: block;
+  text-align: center;
+  margin: 130px auto 0;
+  font-size: 18px;
+  color: red;
+  opacity: 0; }
 
 .weather {
   position: absolute;
