@@ -30,22 +30,22 @@ header {
 	background-color: $headerBlue;
 	padding: 20px 60px;
 
+	.searchbox2 {
+	width: 45%;
+	float: right;
+
+}
+
+.newCity2 {
+	width: 120px !important;
+}
 	img {
 		display: inline-block;
 		height: 50px;
 		
 	}
 
-	input, button {
-		float: right;
-		height: 40px;
-		border: none;
-		margin-left: 30px;
-	}
-
-	button {
-		width: 100px;
-	}
+	
 }
 
 main {
@@ -58,27 +58,15 @@ main {
 .playlist {
 
 	.title {
-		font-size: 55px;
+		font-size: 50px;
+		font-family: Dosis, sans-serif;
 		font-weight: bold;
 		text-align: center;
-		margin-bottom: 40px;
+		margin-bottom: 35px;
 		color: white;
 	}
 	
-	.save-spotify {
-		background-color: $yellow;
-			border: none;
-			color: $headerBlue;
-			display: block;
-			position: relative;
-			text-align: center;
-			width: 320px;
-			height: 50px;
-			margin: 0 auto;
-			font-size: 24px;
-			position: relative;
-			font-weight: 400;
-	}
+	
 
 	.btn {
   position: relative;
@@ -140,13 +128,26 @@ main {
 
 			li {
 				border-bottom: 1px solid $headerBlue;
-				padding: 8px 20px 8px 20px;
+				padding: 8px 0px 8px 0px;
 				height: 40px;
 				width: 100%;
 
+				.bullet {
+					font-size: 16px;
+					font-style: normal;
+				}
+
 				p {
 					font-size: 20px;
+					font-style: italic;
 					display: inline;
+				}
+
+				b {
+					font-size: 24px;
+					font-style: bold;
+					color: $lightBlue;
+
 				}
 
 				img {
@@ -198,7 +199,9 @@ main {
 	}
 
 	b {
-		font-size: 36px;
+		font-size: 40px;
+		letter-spacing: 2px;
+		font-family: dosis, sans-serif;
 		color: white;
 		text-align: center;
 		display: block;
@@ -215,8 +218,8 @@ main {
   position: relative;
   display: block;
   width: 320px;
-  height: 50px;
-  font-size: 12px;
+  height: 51px;
+  font-size: 14px;
   line-height: 50px;
   text-align: center;
   text-transform: uppercase;
@@ -277,9 +280,10 @@ main {
 		p {
 		
 			text-align: center;
-			
-			margin: -10px auto;
+			display: block;
+			margin: 0px auto;
 			color: $yellow;
+			margin-bottom: 30px;
 		}
 		
 		.base {
@@ -291,31 +295,7 @@ main {
 		}
 		
 		
-			.searchbox {
-			width: 430px;
-			height: 200px;
-			margin: 0 auto;
-		}
-
-
-		input {
-			font-size: 28px;
-			height: 50px;
-			width: 350px;
-			margin: 0 auto;
-			float: left;
-			background: white url('../img/search.png') no-repeat left center;
-			background-size: 50px;
-			padding-left: 50px
-		}
-		.newCity {
-			width: 70px;
-			height: 70px;
-			display: inline-block;
-			position: relative;
-			font-weight: 700;
-			font-size: 24px;
-		}
+		
 	}
 	i {
 		display: block;
@@ -378,11 +358,123 @@ main {
 }
 
 
+	.searchbox {
+			width: 470px;
+			height: 200px;
+			margin: 0 auto;
+		}
+
+
+		input {
+			font-size: 28px;
+			height: 50px;
+			width: 400px;
+			margin: 0 auto;
+			float: left;
+			background: white url('../img/search.png') no-repeat left center;
+			background-size: 30px; 
+			padding-left: 40px;
+			padding-right: 20px;
+			outline: none;
+		}
+		
+
+		*::-webkit-input-placeholder {
+   color: #c7c7c7;
+}
+
+*:-moz-placeholder {
+   color: #c7c7c7;
+}
+
+*::-moz-placeholder {
+   color: #c7c7c7;
+}
+
+*:-ms-input-placeholder {
+   color: #c7c7c7;
+}
 
 
 
+.button_base {
+    margin: 0;
+    border: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 25px;
+    position: relative;
+    width: 70px;
+    height: 50px;
+    cursor: default;
+}
 
+.button_update {
+	width: 100px
+}
 
+.button_base:hover {
+    cursor: pointer;
+}
+
+.b03_skewed_slide_in {
+    overflow: hidden;
+    border: $yellow solid 1px;
+}
+
+.b03_skewed_slide_in div {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 10px;
+}
+
+.b03_skewed_slide_in div:nth-child(1) {
+    color: $yellow;
+    background-color: rgba(0,0,0,.1);;
+}
+
+.b03_skewed_slide_in div:nth-child(2) {
+    background-color:  $yellow;
+    width: 230px;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transform: translate(-250px, 0px) skewX(-30deg);
+    -webkit-transform: translate(-250px, 0px) skewX(-30deg);
+    -moz-transform: translate(-250px, 0px) skewX(-30deg);
+}
+
+.b03_skewed_slide_in div:nth-child(3) {
+    color: $headerBlue;
+    font-style: bold;
+    font-size: 18px;
+    font-weight: 700;
+    left: -200px;
+    transition: left 0.2s ease;
+    -webkit-transition: left 0.2s ease;
+    -moz-transition: left 0.2s ease;
+}
+
+.b03_skewed_slide_in:hover div:nth-child(2) {
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transform: translate(-15px, 0px) skewX(-30deg);
+    -webkit-transform: translate(-15px, 0px) skewX(-30deg);
+    -moz-transform: translate(-15px, 0px) skewX(-30deg);
+}
+
+.b03_skewed_slide_in:hover div:nth-child(3) {
+    left: 0px;
+    transition: left 0.30000000000000004s ease;
+    -webkit-transition: left 0.30000000000000004s ease;
+    -moz-transition: left 0.30000000000000004s ease;
+}
 
 
 

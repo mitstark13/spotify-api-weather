@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,900' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -13,9 +14,13 @@
 	
 	<header class='hide'>
 		<img src="img/atmosphere.png" alt="logo">
-		<button>Update</button>
-		<input type="text" placeholder="state">
-		<input type="text" placeholder="city">
+		<div class="searchbox searchbox2 options">
+				<input type="text" placeholder="Juneau, AK">
+				<div class="button_base b03_skewed_slide_in button_update newCity">
+        <div>UPDATE</div>
+        <div></div>
+        <div>UPDATE</div>
+			</div>
 	</header>
 
 	<section class='splash'>
@@ -29,12 +34,16 @@
 				</svg>
 				 use current location
 			</div>
-				</br>
+				
 				<p>or</p>
 				<p class='base'> base it on the weather in another location</p>
 			<div class="searchbox">
 				<input type="text" placeholder="Juneau, AK">
-				<button class='newCity'>Go</button>
+				<div class="button_base b03_skewed_slide_in newCity">
+        <div>GO</div>
+        <div></div>
+        <div >GO</div>
+
 			</div>
 		</div>
 		<i>Please include the state in the format "Chicago,Il" or "Chicago,Illinois"</i>
@@ -96,7 +105,8 @@
     	<ul>
 	    	{{#each response.songs}}
 	    		<li>
-	    			<p>{{title}}</p>
+	    			<p>{{title}}  </p>
+	    			<p class="bullet"> &#8226 </p>
 	    			<b class='artist'>{{artist_name}}</b>
 	    			<img src='img/play.png' alt='remove' class='remove'>
 	    		</li>
