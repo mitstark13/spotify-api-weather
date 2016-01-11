@@ -8,10 +8,8 @@ $('.splash .btn2').click(function() {
 });
 
 $('.newCity').click(function() {
-  alert($('.options .searchbox input').val());
   if ($('.options .searchbox input').val().indexOf(',') != -1) {
     var newCity = $('.options .searchbox input').val();
-    alert(newCity);
     $('.splash i').css('opacity', '0');
     getWeatherInfoCity(newCity);
     $('.splash').css('display', 'none');
