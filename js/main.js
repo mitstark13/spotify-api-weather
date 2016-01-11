@@ -8,10 +8,10 @@ $('.splash .btn2').click(function() {
 });
 
 $('.newCity').click(function() {
-  if ($('.options input').val().indexOf(',') != -1) {
-    var newCity = $('.options input').val();
+  if ($('.options .searchbox input').val().indexOf(',') != -1) {
+    var newCity = $('.options .searchbox input').val();
     $('.splash i').css('opacity', '0');
-    getWeatherInfoCity($('.options input').val());
+    getWeatherInfoCity(newCity);
     $('.splash').css('display', 'none');
     $('section, aside, header').removeClass('hide');
     weatherToMusic();
@@ -114,7 +114,7 @@ function setTitle(city) {
   } else {
     time = "Late-Night"
   }
-  $('.playlist .title').text(city + " " + time + ' ' + weather + ' Mix');
+  $('.playlist .title').text(city + "'s " + time + ' ' + weather + ' Mix');
 }
 
 
