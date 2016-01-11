@@ -89,23 +89,23 @@ function showWeatherInfo(data) {
   if (weather == 'Clear') {
     if (hour < 18) {
       $('.weatherImg').attr('src', 'img/sun.png');
-      $('main').css('background-image', 'url(../img/sunbackground.jpg)')
+      $('main').css('background-image', 'url(img/sunbackground.jpg)')
     } else {
       $('.weatherImg').attr('src', 'img/moon.png');
-      $('main').css('background-image', 'url(../img/nightbackground.jpg)')
+      $('main').css('background-image', 'url(img/nightbackground.jpg)')
     }
-  }else if (weather == 'Rain') {
+  } else if (weather == 'Rain') {
     $('.weatherImg').attr('src', 'img/rain.png');
-    $('main').css('background-image', 'url(../img/rainbackground.jpg)')
-  }else if (weather == 'Clouds') {
-    $('.weatherImg').attr('src', 'img/cloud.png');
-    $('main').css('background-image', 'url(../img/cloudbackground.jpg)')
-  }else if (weather == 'Snow') {
+    $('main').css('background-image', 'url(img/rainbackground.jpg)')
+  } else if (weather == 'Snow') {
     $('.weatherImg').attr('src', 'img/snow.png');
-    $('main').css('background-image', 'url(../img/snowbackground.jpg)')
-  }else if (weather == 'Fog') {
+    $('main').css('background-image', 'url(img/snowbackground.jpg)')
+  } else if (weather == 'Fog') {
     $('.weatherImg').attr('src', 'img/cloud.png');
-    $('main').css('background-image', 'url(../img/cloudbackground.jpg)')
+    $('main').css('background-image', 'url(img/cloudbackground.jpg)')
+  } else {
+    $('.weatherImg').attr('src', 'img/cloud.png');
+    $('main').css('background-image', 'url(img/cloudbackground.jpg)')
   }
   setTitle(data.name);
 }
