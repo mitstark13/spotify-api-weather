@@ -1,9 +1,4 @@
-// Loading GIF
-
-$( document ).ajaxStart(function() {
-    $('.loading').fadeIn(1000);
-});
-
+$('.loading').fadeIn(1000);
 //Splash screen buttons and inputs
 $('.splash .btn2').click(function() {
   $('.splash').css('display', 'none');
@@ -60,7 +55,6 @@ function getWeatherInfo() {
     jsonp:"showWeatherInfo",
     success: showWeatherInfo
   });
-  console.log("http://api.openweathermap.org/data/2.5/weather?lat="+ latLong.lat +"&lon="+ latLong.lng + "&" + weatherApiKey)
 }
 
 function getWeatherInfoCity(newCity) {
@@ -70,7 +64,6 @@ function getWeatherInfoCity(newCity) {
     success: showWeatherInfo
   });
   currentCity = false;
-  console.log("http://api.openweathermap.org/data/2.5/weather?p="+ newCity + "&" + weatherApiKey)
 }
 
 function showWeatherInfo(data) {
@@ -136,21 +129,21 @@ var hour;
 var dance = 0.5;
 var energy = 0.5;
 var familiar = 0.64;
-var genre = 'pop';
-var genre2 = 'rock';
+var genre = 'country';
+var genre2 = 'pop';
 var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 
 function weatherToMusic() {
   if ((weather == 'Rain') || (weather == 'Snow')) {
-    dance -= 0.1;
-    energy -= 0.1;
+    dance -= 0.2;
+    energy -= 0.2;
   } else {
     dance += 0.1;
     energy += 0.1;
   }
   if ((temp < 40) || (temp > 75)) {
-    dance -= 0.05;
-    energy -= 0.05;
+    dance -= 0.1;
+    energy -= 0.1;
   } 
   if (hour < 5) {
     dance -= 0.1;
@@ -162,9 +155,6 @@ function weatherToMusic() {
     dance += 0.2;
     energy += 0.2;
   }
-
-  console.log('energy: ' + energy);
-  console.log('dance: ' + dance);
 
   if (energy < 0.1) {
     energy = 0.1;
@@ -185,6 +175,7 @@ function weatherToMusic() {
 var previews = [];
 
 function getSpotifyPlaylist() {
+  $('.loading').fadeIn(1000);
   $.ajax({
       url: echoURL + echoApiKey + "&genre=" + genre + "&genre=" + genre2,
       data: {
@@ -200,12 +191,67 @@ function getSpotifyPlaylist() {
         variety: variety
       },
       success: function (response) {
-          console.log(response);
+          console.log(response)
           resultsPlaceholder.innerHTML = template(response);
-          // previews.append()
+          $('#results li').filter(":contains('(')").remove();
+          getSpotifyId($('#results li:first-child p').html(), $('#results li:first-child b').html());
+          $('.loading').fadeOut(300);
+          playPreview($('#results li:first-child p').html(), $('#results li:first-child b').html());
+          $('#results li:first-child img').attr('src', 'img/pause.png');
       }
   });
-  console.log(variety);
-  $('.loading').fadeOut(1000);
+}
+
+//Get album cover on click of play button
+var playing = false;
+
+$(document).on('click','#results img',function(){
+  $(this).addClass('active');
+  var track = $(this).siblings('p').html();
+  var artist = $(this).siblings('b').html();
+  $('#results img').attr('src', 'img/play.png')
+  $(this).attr('src', 'img/pause.png');
+  getSpotifyId(track, artist);
+  playPreview(track, artist);
+});
+
+function getSpotifyId(track, artist) {
+  $.ajax({
+      url: "http://developer.echonest.com/api/v4/song/search?" + echoApiKey + "&format=json&artist=" + artist + "&title=" + track + "&bucket=id:spotify&limit=true",
+
+    success: function(data) {
+      var string = JSON.stringify(data);
+      var spotID = string.split("spotify:artist:");
+      var finalId = spotID[1].split('"')[0];
+      getAlbumCover(finalId);
+    }
+  });
+}
+
+function getAlbumCover(id) {
+  $.ajax({
+    url: "https://api.spotify.com/v1/artists/" + id,
+
+    success: function(data) {
+      var pic = data.images[0].url;
+      $('#albumCover').attr('src', pic);
+    }
+  })
+};
+
+function playPreview(track, artist) {
+  $.ajax({
+    url: "https://api.spotify.com/v1/search?q=" + track + "&type=track",
+
+    success: function(response) {
+      console.log(response.tracks.items[0].preview_url)
+      if (playing) {
+        audioObject.pause();
+      }
+      audioObject = new Audio(response.tracks.items[0].preview_url);
+      audioObject.play();
+      playing = true;
+    }
+  })
 }
 
