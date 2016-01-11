@@ -151,34 +151,34 @@ main {
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-    .splash .options .btn2 {
-      position: relative;
-      display: block;
-      width: 320px;
-      height: 51px;
-      font-size: 14px;
-      line-height: 50px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #ffeb66;
-      cursor: pointer;
-      overflow: hidden;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px; }
-    .splash .options .btn2 svg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 400px; }
-    .splash .options .btn2 svg rect {
-      fill: none;
-      stroke: #ffeb66;
-      stroke-width: 1;
-      stroke-dasharray: 422, 0;
-      -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
-      -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
-      transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  .splash .btn2 {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 51px;
+    font-size: 14px;
+    line-height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffeb66;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; }
+  .splash .btn2 svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px; }
+  .splash .btn2 svg rect {
+    fill: none;
+    stroke: #ffeb66;
+    stroke-width: 1;
+    stroke-dasharray: 422, 0;
+    -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
   .splash .btn2:hover svg rect {
     stroke-width: 5;
     stroke-dasharray: 35, 550;
@@ -189,31 +189,35 @@ main {
     letter-spacing: 1px;
     font-weight: bold;
     background-color: transparent; }
-  .splash button {
-    background-color: #ffeb66;
-    border: none;
-    color: #384c99;
-    display: block;
-    position: relative;
-    text-align: center; }
-  .splash .currentLocation {
-    width: 280px;
-    height: 50px;
-    margin: 0 auto;
-    font-size: 28px;
-    position: relative; }
-  .splash p {
-    text-align: center;
-    display: block;
-    margin: 0px auto;
-    color: #ffeb66;
-    margin-bottom: 30px; }
-  .splash .base {
-    color: white;
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 10px;
-    margin-top: 10px; }
+
+button {
+  background-color: #ffeb66;
+  border: none;
+  color: #384c99;
+  display: block;
+  position: relative;
+  text-align: center; }
+
+.currentLocation {
+  width: 280px;
+  height: 50px;
+  margin: 0 auto;
+  font-size: 28px;
+  position: relative; }
+
+p {
+  text-align: center;
+  display: block;
+  margin: 0px auto;
+  color: #ffeb66;
+  margin-bottom: 30px; }
+
+.base {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  margin-top: 10px; }
 
 i {
   display: block;
