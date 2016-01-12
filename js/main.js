@@ -1,7 +1,6 @@
 
 //Splash screen buttons and inputs
 $('.splash .btn2').click(function() {
-  $('.loading').fadeIn(1000);
   $('.splash').css('display', 'none');
   $('section, aside, header').removeClass('hide');
   getWeatherInfoCity(cityChoice);
@@ -9,9 +8,8 @@ $('.splash .btn2').click(function() {
 });
 
 $('.newCity').click(function() {
-  $('.loading').fadeIn(1000); 
-  if ($('.options .searchbox input').val().indexOf(',') != -1) {
-    var newCity = $('.options .searchbox input').val();
+  if ($(this).siblings('input').val().indexOf(',') != -1) {
+    var newCity = $(this).siblings('input').val();
     $('.splash i').css('opacity', '0');
     getWeatherInfoCity(newCity);
     $('.splash').css('display', 'none');
