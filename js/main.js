@@ -79,7 +79,8 @@ function showWeatherInfo(data) {
     $('.loader, .loading').fadeOut(100);
   }
 
-  if (weather == 'Clear') {
+  if ((weather == 'Clear') || (weather == 'Haze')) {
+    weather = 'Sunny';
     if (hour < 18) {
       $('.weatherImg').attr('src', 'img/sun.png');
       $('main').css('background-image', 'url(img/sunbackground.jpg)')
@@ -129,33 +130,57 @@ var hour;
 var dance = 0.5;
 var energy = 0.5;
 var familiar = 0.64;
-var genre = 'country';
-var genre2 = 'pop';
+var genre = 'pop';
+var genre2 = 'dance pop';
+var genre3 = 'country';
+var genre4 = 'chamber pop';
+var genre5 = 'indietronica';
 var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 
 function weatherToMusic() {
   if ((weather == 'Rain') || (weather == 'Snow')) {
+    genre = 'chamber pop';
+    genre2 = 'country rock';
+    genre3 = 'neo mellow';
     dance -= 0.2;
     energy -= 0.2;
   } else {
     dance += 0.1;
     energy += 0.1;
   }
+  if (weather == 'Clouds') {
+    genre = 'pop';
+    genre2 = 'rock';
+    genre3 = 'mellow gold';
+  } else if (weather == 'Sunny') {
+    genre = 'dance pop';
+    genre2 = 'pop rock';
+    genre3 = 'hip hop';
+  } else if (weather == 'Snow') {
+    genre = 'singer-songwriter';
+    genre2 = 'indie rock';
+    genre3 = 'folk-pop';
+  }
   if ((temp < 40) || (temp > 75)) {
     dance -= 0.1;
     energy -= 0.1;
   } 
   if (hour < 5) {
-    dance -= 0.1;
-    energy -= 0.1;
-  } else if ((5 <= hour) && (hour <= 10) || (15<= hour) && (hour <= 18)) {
+    dance -= 0.15;
+    energy -= 0.15;
+    genre4 = 'country';
+    genre5 = 'new mellow';
+  } else if (((5 <= hour) && (hour <= 10)) || ((15<= hour) && (hour <= 18))) {
     dance += 0.1;
     energy += 0.1;
-  } else if (hour > 18){
+    genre4 = 'pop rock';
+    genre5 = 'hip pop';
+  } else if (((10 <= hour) && (hour <= 15)) || (18<= hour)){
     dance += 0.2;
     energy += 0.2;
+    genre4 = 'singer-songwriter';
+    genre5 = 'pop rock';
   }
-
   if (energy < 0.1) {
     energy = 0.1;
   }
@@ -177,7 +202,7 @@ var previews = [];
 function getSpotifyPlaylist() {
   $('.loading').fadeIn(1000);
   $.ajax({
-      url: echoURL + echoApiKey + "&genre=" + genre + "&genre=" + genre2,
+      url: echoURL + echoApiKey + "&genre=" + genre + "&genre=" + genre2 + "&genre=" + genre3 + "&genre=" + genre4 + "&genre=" + genre5,
       data: {
         format: 'json',
         results: '20',
@@ -220,6 +245,7 @@ function getSpotifyId(track, artist) {
       url: "http://developer.echonest.com/api/v4/song/search?" + echoApiKey + "&format=json&artist=" + artist + "&title=" + track + "&bucket=id:spotify&limit=true",
 
     success: function(data) {
+      console.log(data);
       var string = JSON.stringify(data);
       var spotID = string.split("spotify:artist:");
       var finalId = spotID[1].split('"')[0];
