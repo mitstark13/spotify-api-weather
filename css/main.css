@@ -103,29 +103,34 @@ main {
 #results {
   position: relative;
   width: 57%;
-  margin-left: 240px; }
+  margin-left: 240px;
+  height: 330px;
+  overflow-y: auto; }
   /* line 131, main.scss */
+  #results ::-webkit-scrollbar {
+    display: none; }
+  /* line 137, main.scss */
   #results ul li {
     border-bottom: 1px solid #384c99;
     padding: 8px 0px 8px 0px;
     height: 40px;
     width: 100%; }
-    /* line 137, main.scss */
+    /* line 143, main.scss */
     #results ul li .bullet {
       font-size: 16px;
       font-style: normal; }
-    /* line 142, main.scss */
+    /* line 148, main.scss */
     #results ul li p {
       font-size: 20px;
       font-style: italic;
       display: inline;
       color: white; }
-    /* line 149, main.scss */
+    /* line 155, main.scss */
     #results ul li b {
       font-size: 24px;
       font-style: bold;
       color: #bcd4fb; }
-    /* line 156, main.scss */
+    /* line 162, main.scss */
     #results ul li img {
       vertical-align: middle;
       height: auto;
@@ -133,28 +138,28 @@ main {
       border-radius: 50%;
       display: inline;
       float: right; }
-    /* line 165, main.scss */
+    /* line 171, main.scss */
     #results ul li img:first-of-type {
       margin-left: 15px; }
 
-/* line 174, main.scss */
+/* line 180, main.scss */
 .splash {
   position: relative;
   height: 100vh;
   width: 100vw;
   background-image: url("../img/splash.jpg");
   background-size: cover; }
-  /* line 182, main.scss */
+  /* line 188, main.scss */
   .splash .logo {
     height: 170px;
     width: 540px;
     margin: 60px 50% 0;
     transform: translateX(-50%); }
-    /* line 188, main.scss */
+    /* line 194, main.scss */
     .splash .logo img {
       height: 170px;
       width: 540px; }
-  /* line 194, main.scss */
+  /* line 200, main.scss */
   .splash h1 {
     text-align: center;
     color: #ffeb66;
@@ -163,7 +168,7 @@ main {
     font-size: 1.4em;
     margin-top: 20px;
     margin-bottom: 20px; }
-  /* line 204, main.scss */
+  /* line 210, main.scss */
   .splash b {
     font-size: 40px;
     letter-spacing: 2px;
@@ -172,14 +177,14 @@ main {
     text-align: center;
     display: block;
     margin-bottom: 20px; }
-  /* line 214, main.scss */
+  /* line 220, main.scss */
   .splash .options {
     height: 400px;
     width: 60%;
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-  /* line 221, main.scss */
+  /* line 227, main.scss */
   .splash .btn2 {
     position: relative;
     display: block;
@@ -195,13 +200,13 @@ main {
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; }
-  /* line 238, main.scss */
+  /* line 244, main.scss */
   .splash .btn2 svg {
     position: absolute;
     top: 0;
     left: 0;
     width: 400px; }
-  /* line 243, main.scss */
+  /* line 249, main.scss */
   .splash .btn2 svg rect {
     fill: none;
     stroke: #ffeb66;
@@ -210,12 +215,12 @@ main {
     -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
-  /* line 252, main.scss */
+  /* line 258, main.scss */
   .splash .btn2:hover svg rect {
     stroke-width: 5;
     stroke-dasharray: 35, 550;
     stroke-dashoffset: 60; }
-  /* line 259, main.scss */
+  /* line 265, main.scss */
   .splash .btn2:hover {
     color: #ffeb66;
     font-size: 18px;
@@ -223,7 +228,7 @@ main {
     font-weight: bold;
     background-color: transparent; }
 
-/* line 268, main.scss */
+/* line 274, main.scss */
 button {
   background-color: #ffeb66;
   border: none;
@@ -232,7 +237,7 @@ button {
   position: relative;
   text-align: center; }
 
-/* line 276, main.scss */
+/* line 282, main.scss */
 .currentLocation {
   width: 280px;
   height: 50px;
@@ -240,7 +245,7 @@ button {
   font-size: 28px;
   position: relative; }
 
-/* line 283, main.scss */
+/* line 289, main.scss */
 p {
   text-align: center;
   display: block;
@@ -248,7 +253,7 @@ p {
   color: #ffeb66;
   margin-bottom: 30px; }
 
-/* line 292, main.scss */
+/* line 298, main.scss */
 .base {
   color: white;
   font-size: 18px;
@@ -256,7 +261,7 @@ p {
   margin-bottom: 10px;
   margin-top: 10px; }
 
-/* line 299, main.scss */
+/* line 305, main.scss */
 i {
   display: block;
   text-align: center;
@@ -265,18 +270,18 @@ i {
   color: red;
   opacity: 0; }
 
-/* line 309, main.scss */
+/* line 315, main.scss */
 .weather {
   position: absolute;
   right: 80px;
   top: 200px; }
-  /* line 314, main.scss */
+  /* line 320, main.scss */
   .weather .weatherImg {
     display: block;
     width: 200px;
     height: auto;
     margin-bottom: 30px; }
-  /* line 321, main.scss */
+  /* line 327, main.scss */
   .weather b {
     display: inline-block;
     transform: translateY(50%);
@@ -284,13 +289,13 @@ i {
     font-weight: 300;
     margin-right: 20px;
     color: white; }
-  /* line 330, main.scss */
+  /* line 336, main.scss */
   .weather .f {
     vertical-align: middle;
     height: auto;
     width: 100px; }
 
-/* line 337, main.scss */
+/* line 343, main.scss */
 .albumCover {
   position: absolute;
   top: 280px;
@@ -298,13 +303,13 @@ i {
   margin-bottom: 120px;
   -webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.3) 0%, transparent 50%, transparent 100%); }
 
-/* line 345, main.scss */
+/* line 351, main.scss */
 img {
   height: auto;
   width: 150px;
   border-radius: 5%; }
 
-/* line 354, main.scss */
+/* line 360, main.scss */
 .loading {
   position: fixed;
   left: 0px;
@@ -316,18 +321,18 @@ img {
   background-size: cover;
   opacity: 0; }
 
-/* line 366, main.scss */
+/* line 372, main.scss */
 .currentCity {
   opacity: 1;
   height: 50px; }
 
-/* line 373, main.scss */
+/* line 379, main.scss */
 .searchbox {
   width: 470px;
   height: 200px;
   margin: 0 auto; }
 
-/* line 380, main.scss */
+/* line 386, main.scss */
 input {
   font-size: 28px;
   height: 50px;
@@ -340,23 +345,23 @@ input {
   padding-right: 20px;
   outline: none; }
 
-/* line 394, main.scss */
+/* line 400, main.scss */
 *::-webkit-input-placeholder {
   color: #c7c7c7; }
 
-/* line 398, main.scss */
+/* line 404, main.scss */
 *:-moz-placeholder {
   color: #c7c7c7; }
 
-/* line 402, main.scss */
+/* line 408, main.scss */
 *::-moz-placeholder {
   color: #c7c7c7; }
 
-/* line 406, main.scss */
+/* line 412, main.scss */
 *:-ms-input-placeholder {
   color: #c7c7c7; }
 
-/* line 412, main.scss */
+/* line 418, main.scss */
 .button_base {
   margin: 0;
   border: 0;
@@ -368,20 +373,20 @@ input {
   height: 50px;
   cursor: default; }
 
-/* line 424, main.scss */
+/* line 430, main.scss */
 .button_update {
   width: 100px; }
 
-/* line 428, main.scss */
+/* line 434, main.scss */
 .button_base:hover {
   cursor: pointer; }
 
-/* line 432, main.scss */
+/* line 438, main.scss */
 .b03_skewed_slide_in {
   overflow: hidden;
   border: #ffeb66 solid 1px; }
 
-/* line 437, main.scss */
+/* line 443, main.scss */
 .b03_skewed_slide_in div {
   position: absolute;
   text-align: center;
@@ -392,12 +397,12 @@ input {
   -moz-box-sizing: border-box;
   padding: 10px; }
 
-/* line 448, main.scss */
+/* line 454, main.scss */
 .b03_skewed_slide_in div:nth-child(1) {
   color: #ffeb66;
   background-color: rgba(0, 0, 0, 0.1); }
 
-/* line 453, main.scss */
+/* line 459, main.scss */
 .b03_skewed_slide_in div:nth-child(2) {
   background-color: #ffeb66;
   width: 230px;
@@ -408,7 +413,7 @@ input {
   -webkit-transform: translate(-250px, 0px) skewX(-30deg);
   -moz-transform: translate(-250px, 0px) skewX(-30deg); }
 
-/* line 464, main.scss */
+/* line 470, main.scss */
 .b03_skewed_slide_in div:nth-child(3) {
   color: #384c99;
   font-style: bold;
@@ -419,7 +424,7 @@ input {
   -webkit-transition: left 0.2s ease;
   -moz-transition: left 0.2s ease; }
 
-/* line 475, main.scss */
+/* line 481, main.scss */
 .b03_skewed_slide_in:hover div:nth-child(2) {
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -428,14 +433,14 @@ input {
   -webkit-transform: translate(-15px, 0px) skewX(-30deg);
   -moz-transform: translate(-15px, 0px) skewX(-30deg); }
 
-/* line 484, main.scss */
+/* line 490, main.scss */
 .b03_skewed_slide_in:hover div:nth-child(3) {
   left: 0px;
   transition: left 0.30000000000000004s ease;
   -webkit-transition: left 0.30000000000000004s ease;
   -moz-transition: left 0.30000000000000004s ease; }
 
-/* line 493, main.scss */
+/* line 499, main.scss */
 .loader {
   width: 250px;
   height: 80px;
@@ -445,12 +450,12 @@ input {
   margin: -25px -125px;
   list-style-type: none; }
 
-/* line 505, main.scss */
+/* line 511, main.scss */
 .loader li {
   float: left;
   position: relative; }
 
-/* line 511, main.scss */
+/* line 517, main.scss */
 .circle {
   width: 40px;
   height: 40px;
@@ -460,7 +465,7 @@ input {
   border-left: 0;
   border-right: 0; }
 
-/* line 521, main.scss */
+/* line 527, main.scss */
 .ball {
   position: absolute;
   content: "";
@@ -475,37 +480,37 @@ input {
   overflow: visible;
   box-shadow: 0 -15px 0 0 rgba(255, 255, 255, 0.15), 0 -10px 0 0 rgba(255, 255, 255, 0.1), 0 -5px 0 0 rgba(255, 255, 255, 0.05); }
 
-/* line 536, main.scss */
+/* line 542, main.scss */
 .circle {
   -webkit-animation: rotate 1.5s cubic-bezier(0.45, 0, 1, 1) infinite;
   animation: rotate 1.5s cubic-bezier(0.45, 0, 1, 1) infinite; }
 
-/* line 541, main.scss */
+/* line 547, main.scss */
 .ball {
   -webkit-animation: fall 1.5s cubic-bezier(0.95, 0, 1, 1) infinite;
   animation: fall 1.5s cubic-bezier(0.95, 0, 1, 1) infinite; }
 
-/* line 546, main.scss */
+/* line 552, main.scss */
 .loader li:nth-child(1) div {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms; }
 
-/* line 551, main.scss */
+/* line 557, main.scss */
 .loader li:nth-child(2) div {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms; }
 
-/* line 556, main.scss */
+/* line 562, main.scss */
 .loader li:nth-child(3) div {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms; }
 
-/* line 561, main.scss */
+/* line 567, main.scss */
 .loader li:nth-child(4) div {
   -webkit-animation-delay: 400ms;
   animation-delay: 400ms; }
 
-/* line 566, main.scss */
+/* line 572, main.scss */
 .loader li:nth-child(5) div {
   -webkit-animation-delay: 500ms;
   animation-delay: 500ms; }

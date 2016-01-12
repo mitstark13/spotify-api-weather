@@ -125,6 +125,12 @@ main {
 	position: relative;
 	width: 57%;
 	margin-left: 240px;
+	height: 330px;
+	overflow-y: auto;
+
+	::-webkit-scrollbar { 
+	    display: none; 
+	}
 
 	ul {
 
