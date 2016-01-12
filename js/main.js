@@ -1,6 +1,7 @@
-$('.loading').fadeIn(1000);
+
 //Splash screen buttons and inputs
 $('.splash .btn2').click(function() {
+  $('.loading').fadeIn(1000);
   $('.splash').css('display', 'none');
   $('section, aside, header').removeClass('hide');
   getWeatherInfoCity(cityChoice);
@@ -8,6 +9,7 @@ $('.splash .btn2').click(function() {
 });
 
 $('.newCity').click(function() {
+  $('.loading').fadeIn(1000); 
   if ($('.options .searchbox input').val().indexOf(',') != -1) {
     var newCity = $('.options .searchbox input').val();
     $('.splash i').css('opacity', '0');
@@ -76,7 +78,7 @@ function showWeatherInfo(data) {
   weatherDescription = data.weather[0].description;
   hour = new Date($.now()).getHours();
   if (currentCity) {
-    $('.loading').fadeOut(1000);
+    $('.loader, .loading').fadeOut(100);
   }
 
   if (weather == 'Clear') {

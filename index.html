@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+	<script type="text/javascript" src="js/reflection.js"></script>
 	<title>atmosphere</title>
 </head>
 <div class="loading"></div>
@@ -26,7 +27,29 @@
 	<section class='splash'>
 		<div class='logo'><img src="img/atmosphere.png" alt="logo"></div>
 		<h1>Create a music playlist based on the weather.</h1>
-		<b class='currentCity'>Chicago,IL</b>
+		<ul class="loader">
+  <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+  </li>
+  <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+  </li>
+  <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+  </li>
+  <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+  </li>
+  <li>
+    <div class="circle"></div>
+    <div class="ball"></div>
+  </li>
+</ul>
+		<b class='currentCity'></b>
 		<div class='options'>
 			<div class="btn2">
 				<svg>
@@ -94,7 +117,7 @@
 		</aside>
 
 		<aside class='albumCover hide'>
-			<img src="#" alt="albumCover" id='albumCover'>
+			<img class='reflect' src="#" alt="albumCover" id='albumCover'>
 		</aside>
 	</main>
 </body>
