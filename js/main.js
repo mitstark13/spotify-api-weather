@@ -267,7 +267,7 @@ function getAlbumCover(id) {
 
 function playPreview(track, artist) {
   $.ajax({
-    url: "https://api.spotify.com/v1/search?q=" + track + "&type=track",
+    url: "https://api.spotify.com/v1/search?q=track:" + track + "&artist:" + artist + "&type=track",
 
     success: function(response) {
       console.log(response.tracks.items[0].preview_url)
