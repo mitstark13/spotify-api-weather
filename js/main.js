@@ -231,7 +231,7 @@ function getSpotifyPlaylist() {
 var playing = false;
 
 $(document).on('click','#results img',function(){
-  $(this).addClass('active');
+  $(this).parent().addClass('active');
   var track = $(this).siblings('p').html();
   var artist = $(this).siblings('b').html();
   $('#results img').attr('src', 'img/play.png')
