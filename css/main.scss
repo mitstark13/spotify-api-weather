@@ -3,6 +3,8 @@ $headerBlue: #384c99;
 $yellow: #ffeb66;
 $lightBlue: #bcd4fb;
 
+
+
 * {
 	box-sizing: border-box;
 	padding: 0;
@@ -69,9 +71,7 @@ main {
 		color: white;
 	}
 
-	.artist {
-
-	}
+	
 
 	.btn {
 	  position: relative;
@@ -128,9 +128,16 @@ main {
 	height: 330px;
 	overflow-y: auto;
 
-	::-webkit-scrollbar { 
-	    display: none; 
+	.active {
+		background-color: $headerBlue;
+		transform: scalez(.2);
+
+	
 	}
+
+
+
+	
 
 	ul {
 
@@ -157,15 +164,25 @@ main {
 				font-style: bold;
 				color: $lightBlue;
 
+			
+
+			}
+
+			.equalizer {
+			width: 50px;
+			
+			position: absolute;
+
 			}
 
 			img {
 				vertical-align: middle;
 				height: auto;
-				width: 25px;
-				border-radius: 50%;
+				width: 10px;
 				display: inline;
 				float: right;
+				margin-bottom: 3px;
+				display: inline-block;
 			}
 
 			img:first-of-type {
@@ -345,7 +362,7 @@ i {
 	top: 280px;
 	left: 80px;
 	margin-bottom: 120px;
-	-webkit-box-reflect: below 0px -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.3) 0%, transparent 50%, transparent 100%);
+
 }
 
 	img {
@@ -662,7 +679,52 @@ i {
 
 
 
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: $lightBlue;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: $lightBlue;
+}
 
 
+div.playit {
+				width: 30px;
+				float: right;
+				height: 30px;
+				border-radius: 50%;
+				margin-right: 5px;
+				margin-top: -4px;
+				
+				
+				
+					
+			 	img {
+			 		margin-top: -3px;
+			 		display: inline-block;
 
+			 	}
+			}
+
+
+.playit:hover {
+
+					img {
+						-webkit-transform: scale(1.5,1.5); /* Safari */
+    				    transform: scale(1.5,1.5);
+					}
+
+				}
 

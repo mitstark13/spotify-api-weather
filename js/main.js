@@ -169,7 +169,7 @@ function weatherToMusic() {
     dance -= 0.15;
     energy -= 0.15;
     genre4 = 'country';
-    genre5 = 'new mellow';
+    genre5 = 'neo mellow';
   } else if (((5 <= hour) && (hour <= 10)) || ((15<= hour) && (hour <= 18))) {
     dance += 0.1;
     energy += 0.1;
@@ -230,13 +230,17 @@ function getSpotifyPlaylist() {
 //Get album cover on click of play button
 var playing = false;
 
-$(document).on('click','#results img',function(){
-  $(this).addClass('active');
+$(document).on('click','#results div',function(){
+  $('li').removeClass('active');
+  $(this).parent().addClass('active');
   var track = $(this).siblings('p').html();
   var artist = $(this).siblings('b').html();
-  $('#results img').attr('src', 'img/play.png')
-  $(this).attr('src', 'img/pause.png');
-  getSpotifyId(track, artist);
+  $(this).find('.equalizer').attr('src', 'img/equalizer.gif');
+  $('.playpause').attr('src', 'img/play.png')
+  $('.playpauseblue').attr('src', 'img/playblue.png')
+  $(this).find('.playpause').attr('src', 'img/pause.png');
+  $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
+
   playPreview(track, artist);
 });
 
@@ -261,6 +265,7 @@ function getAlbumCover(id) {
     success: function(data) {
       var pic = data.images[0].url;
       $('#albumCover').attr('src', pic);
+      $(".albumCover img").reflect();
     }
   })
 };
