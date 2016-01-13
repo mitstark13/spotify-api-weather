@@ -236,9 +236,10 @@ $(document).on('click','#results div',function(){
   $(this).parent().addClass('active');
   var track = $(this).siblings('p').html();
   var artist = $(this).siblings('b').html();
-  $(this).find('.equalizer').attr('src', 'img/equalizer.gif');
-  $('.playpause').attr('src', 'img/play.png')
-  $('.playpauseblue').attr('src', 'img/playblue.png')
+  $('.equalizer').html(' ');
+  $(this).siblings('.equalizer').html('<img  src="img/equalizer.gif" />');
+  $('.playpause').attr('src', 'img/play.png');
+  $('.playpauseblue').attr('src', 'img/playblue.png');
   $(this).find('.playpause').attr('src', 'img/pause.png');
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
 

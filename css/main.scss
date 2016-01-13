@@ -118,7 +118,7 @@ main {
   font-size:18px;
   letter-spacing:1px;
   font-weight:bold;
-  background-color: rgba(0,0,0,0)
+  background-color: rgba(0,0,0,0);
 }
 
 #results {
@@ -129,9 +129,8 @@ main {
 	overflow-y: auto;
 
 	.active {
-		background-color: $headerBlue;
+		background-color: rgba(33,72,145,.4);
 		transform: scalez(.2);
-
 	
 	}
 
@@ -167,11 +166,16 @@ main {
 			
 
 			}
-
-			.equalizer {
-			width: 50px;
 			
+			.equalizer {
+		
 			position: absolute;
+			float: left;
+			top: 10px;
+			right: 50px;
+				img {
+					width: 50px;
+				}
 
 			}
 
@@ -551,7 +555,7 @@ i {
   margin-top: -10px;
   margin-left: -10px;
   border-radius: 100%;
-  background: #fff;
+  background: $lightBlue;
   overflow: visible;
   box-shadow: 0 -15px 0 0 rgba(255, 255, 255, 0.15), 0 -10px 0 0 rgba(255, 255, 255, 0.10), 0 -5px 0 0 rgba(255, 255, 255, 0.05);
 }
