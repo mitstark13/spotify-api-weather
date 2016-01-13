@@ -230,12 +230,9 @@ function getSpotifyPlaylist() {
 //Get album cover on click of play button
 var playing = false;
 
-<<<<<<< HEAD
+
 $(document).on('click','#results div',function(){
   $('li').removeClass('active');
-=======
-$(document).on('click','#results img',function(){
->>>>>>> origin/master
   $(this).parent().addClass('active');
   var track = $(this).siblings('p').html();
   var artist = $(this).siblings('b').html();
