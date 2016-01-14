@@ -116,6 +116,7 @@ function setTitle(city) {
     time = "Late-Night"
   }
   $('.playlist .title').text(city + "'s " + time + ' ' + weather + ' Mix');
+  getCityPhoto();
 }
 
 
@@ -242,6 +243,7 @@ $(document).on('click','#results div',function(){
   $('.playpauseblue').attr('src', 'img/playblue.png');
   $(this).find('.playpause').attr('src', 'img/pause.png');
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
+  getSpotifyId(track, artist);
   playPreview(track, artist);
 });
 
@@ -287,3 +289,20 @@ function playPreview(track, artist) {
   })
 }
 
+function getCityPhoto() {
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+    tags:  currentCity,
+    geo_context: 2,
+    accuracy: 11,
+    tagmode: "any",
+    format: "json"
+  },
+  function(data) {
+    console.log(data);
+    $.each(data.items, function(i,item){
+      $("<img />").attr("src", item.media.m).prependTo(".logo");
+      if ( i == 3 ) return false;
+    });
+  });
+}
