@@ -242,7 +242,6 @@ $(document).on('click','#results div',function(){
   $('.playpauseblue').attr('src', 'img/playblue.png');
   $(this).find('.playpause').attr('src', 'img/pause.png');
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
-
   playPreview(track, artist);
 });
 
