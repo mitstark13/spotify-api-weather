@@ -12,9 +12,11 @@
 </head>
 <div class="loading"></div>
 <body>
-	
+
 	<header class='hide options'>
 		<img src="img/atmosphere.png" alt="logo">
+		<div id="cityPhoto">
+		</div>
 		<div class="searchbox searchbox2">
 			<input type="text" placeholder="Juneau, AK">
 			<div class="button_base b03_skewed_slide_in button_update newCity">
@@ -71,7 +73,8 @@
 		<i>Please include the state in the format "Chicago,Il" or "Chicago,Illinois"</i>
 	</section>
 
-	<main>
+	<main class='hide'>
+	<div style="width:1400px;  min-height: 800px; margin-top: 90px; position: absolute; background-size: cover; top: 0; right:0; opacity: .1;" class="photoHolder "></div>	
 		<section class='playlist hide'>
 			<div class='title'>Chicago Cloudy Afternoon Mix</div>
 			<div class="btn">
@@ -110,7 +113,6 @@
 				</ul>
 			</div>
 		</section>
-
 		<aside class='weather hide'>
 			<img src="img/cloud.png" alt="weatherImg" class='weatherImg'>
 			<b>35</b>
@@ -120,6 +122,9 @@
 		<aside class='albumCover hide'>
 			<img  src="#" alt="albumCover" id='albumCover'>
 		</aside>
+		
+		</section>
+
 	</main>
 </body>
 

@@ -35,12 +35,32 @@ header {
 	width: 100vw;
 	background-color: $headerBlue;
 	padding: 20px 60px;
-
+	background-size: 100%;
+	background-repeat: no-repeat;
+	
 	.searchbox2 {
 		width: 45%;
 		float: right;
+		
+		position: relative;
+		display: inline-block;
 	}
 
+	#cityPhoto {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+
+	
+	img {
+		height: auto;
+		width: 150px;
+
+	}
+}
+
+	
 
 	.newCity2 {
 		width: 120px !important;
@@ -58,9 +78,16 @@ main {
 	background-image: url('../img/cloudbackground.jpg');
 	background-size: cover;
 	min-height: 800px;
-}
+	width: 100%;
+	height: auto;
+
+
+
 
 .playlist {
+	
+	z-index: 55;
+
 
 	.title {
 		font-size: 50px;
@@ -196,7 +223,7 @@ main {
 		}
 	}
 }
-
+}
 
 .splash {
 	// display: none;
@@ -377,6 +404,12 @@ i {
 		
 	
 	}
+
+
+
+
+
+
 
 .loading {
 	position: fixed;

@@ -25,152 +25,166 @@ header {
   height: 90px;
   width: 100vw;
   background-color: #384c99;
-  padding: 20px 60px; }
-  /* line 39, main.scss */
+  padding: 20px 60px;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+  /* line 41, main.scss */
   header .searchbox2 {
     width: 45%;
-    float: right; }
-  /* line 45, main.scss */
+    float: right;
+    position: relative;
+    display: inline-block; }
+  /* line 49, main.scss */
+  header #cityPhoto {
+    position: fixed;
+    top: 0;
+    left: 0; }
+    /* line 56, main.scss */
+    header #cityPhoto img {
+      height: auto;
+      width: 150px; }
+  /* line 65, main.scss */
   header .newCity2 {
     width: 120px !important; }
-  /* line 49, main.scss */
+  /* line 69, main.scss */
   header img {
     display: inline-block;
     height: 50px; }
 
-/* line 56, main.scss */
+/* line 76, main.scss */
 main {
   padding: 40px 80px;
   background-image: url("../img/cloudbackground.jpg");
   background-size: cover;
-  min-height: 800px; }
-
-/* line 65, main.scss */
-.playlist .title {
-  font-size: 50px;
-  font-family: Dosis, sans-serif;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 35px;
-  color: white; }
-/* line 76, main.scss */
-.playlist .btn {
-  position: relative;
-  display: block;
-  width: 320px;
-  height: 50px;
-  font-size: 12px;
-  line-height: 50px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffeb66;
-  cursor: pointer;
-  overflow: hidden;
-  margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; }
-/* line 93, main.scss */
-.playlist .btn svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 400px; }
-/* line 98, main.scss */
-.playlist .btn svg rect {
-  fill: none;
-  stroke: #ffeb66;
-  stroke-width: 1;
-  stroke-dasharray: 422, 0;
-  -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
-  -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
-  transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
-
-/* line 109, main.scss */
-.btn:hover svg rect {
-  stroke-width: 5;
-  stroke-dasharray: 35, 550;
-  stroke-dashoffset: 60; }
-
-/* line 116, main.scss */
-.btn:hover {
-  color: #ffeb66;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: bold;
-  background-color: transparent; }
-
-/* line 124, main.scss */
-#results {
-  position: relative;
-  width: 57%;
-  margin-left: 240px;
-  height: 330px;
-  overflow-y: auto; }
-  /* line 131, main.scss */
-  #results .active {
-    background-color: rgba(33, 72, 145, 0.4);
-    transform: scalez(0.2); }
-  /* line 143, main.scss */
-  #results ul li {
-    border-bottom: 1px solid #384c99;
-    padding: 8px 0px 8px 0px;
-    height: 40px;
-    width: 100%; }
-    /* line 149, main.scss */
-    #results ul li .bullet {
-      font-size: 16px;
-      font-style: normal; }
-    /* line 154, main.scss */
-    #results ul li p {
-      font-size: 20px;
-      font-style: italic;
-      display: inline;
+  min-height: 800px;
+  width: 100%;
+  height: auto; }
+  /* line 87, main.scss */
+  main .playlist {
+    z-index: 55; }
+    /* line 92, main.scss */
+    main .playlist .title {
+      font-size: 50px;
+      font-family: Dosis, sans-serif;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 35px;
       color: white; }
-    /* line 161, main.scss */
-    #results ul li b {
-      font-size: 24px;
-      font-style: bold;
-      color: #bcd4fb; }
-    /* line 170, main.scss */
-    #results ul li .equalizer {
+    /* line 103, main.scss */
+    main .playlist .btn {
+      position: relative;
+      display: block;
+      width: 320px;
+      height: 50px;
+      font-size: 12px;
+      line-height: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #ffeb66;
+      cursor: pointer;
+      overflow: hidden;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; }
+    /* line 120, main.scss */
+    main .playlist .btn svg {
       position: absolute;
-      float: left;
-      top: 10px;
-      right: 50px; }
+      top: 0;
+      left: 0;
+      width: 400px; }
+    /* line 125, main.scss */
+    main .playlist .btn svg rect {
+      fill: none;
+      stroke: #ffeb66;
+      stroke-width: 1;
+      stroke-dasharray: 422, 0;
+      -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
+  /* line 136, main.scss */
+  main .btn:hover svg rect {
+    stroke-width: 5;
+    stroke-dasharray: 35, 550;
+    stroke-dashoffset: 60; }
+  /* line 143, main.scss */
+  main .btn:hover {
+    color: #ffeb66;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color: transparent; }
+  /* line 151, main.scss */
+  main #results {
+    position: relative;
+    width: 57%;
+    margin-left: 240px;
+    height: 330px;
+    overflow-y: auto; }
+    /* line 158, main.scss */
+    main #results .active {
+      background-color: rgba(33, 72, 145, 0.4);
+      transform: scalez(0.2); }
+    /* line 170, main.scss */
+    main #results ul li {
+      border-bottom: 1px solid #384c99;
+      padding: 8px 0px 8px 0px;
+      height: 40px;
+      width: 100%; }
       /* line 176, main.scss */
-      #results ul li .equalizer img {
-        width: 50px; }
-    /* line 182, main.scss */
-    #results ul li img {
-      vertical-align: middle;
-      height: auto;
-      width: 10px;
-      display: inline;
-      float: right;
-      margin-bottom: 3px;
-      display: inline-block; }
-    /* line 192, main.scss */
-    #results ul li img:first-of-type {
-      margin-left: 15px; }
+      main #results ul li .bullet {
+        font-size: 16px;
+        font-style: normal; }
+      /* line 181, main.scss */
+      main #results ul li p {
+        font-size: 20px;
+        font-style: italic;
+        display: inline;
+        color: white; }
+      /* line 188, main.scss */
+      main #results ul li b {
+        font-size: 24px;
+        font-style: bold;
+        color: #bcd4fb; }
+      /* line 197, main.scss */
+      main #results ul li .equalizer {
+        position: absolute;
+        float: left;
+        top: 10px;
+        right: 50px; }
+        /* line 203, main.scss */
+        main #results ul li .equalizer img {
+          width: 50px; }
+      /* line 209, main.scss */
+      main #results ul li img {
+        vertical-align: middle;
+        height: auto;
+        width: 10px;
+        display: inline;
+        float: right;
+        margin-bottom: 3px;
+        display: inline-block; }
+      /* line 219, main.scss */
+      main #results ul li img:first-of-type {
+        margin-left: 15px; }
 
-/* line 201, main.scss */
+/* line 228, main.scss */
 .splash {
   position: relative;
   height: 100vh;
   width: 100vw;
   background-image: url("../img/splash.jpg");
   background-size: cover; }
-  /* line 209, main.scss */
+  /* line 236, main.scss */
   .splash .logo {
     height: 170px;
     width: 540px;
     margin: 60px 50% 0;
     transform: translateX(-50%); }
-    /* line 215, main.scss */
+    /* line 242, main.scss */
     .splash .logo img {
       height: 170px;
       width: 540px; }
-  /* line 221, main.scss */
+  /* line 248, main.scss */
   .splash h1 {
     text-align: center;
     color: #ffeb66;
@@ -179,7 +193,7 @@ main {
     font-size: 1.4em;
     margin-top: 20px;
     margin-bottom: 20px; }
-  /* line 231, main.scss */
+  /* line 258, main.scss */
   .splash b {
     font-size: 40px;
     letter-spacing: 2px;
@@ -188,14 +202,14 @@ main {
     text-align: center;
     display: block;
     margin-bottom: 20px; }
-  /* line 241, main.scss */
+  /* line 268, main.scss */
   .splash .options {
     height: 400px;
     width: 60%;
     font-size: 28px;
     margin: 0 auto;
     position: relative; }
-  /* line 248, main.scss */
+  /* line 275, main.scss */
   .splash .btn2 {
     position: relative;
     display: block;
@@ -211,13 +225,13 @@ main {
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.1);
     margin-bottom: 20px; }
-  /* line 265, main.scss */
+  /* line 292, main.scss */
   .splash .btn2 svg {
     position: absolute;
     top: 0;
     left: 0;
     width: 400px; }
-  /* line 270, main.scss */
+  /* line 297, main.scss */
   .splash .btn2 svg rect {
     fill: none;
     stroke: #ffeb66;
@@ -226,12 +240,12 @@ main {
     -webkit-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
     -moz-transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1);
     transition: all 1300ms cubic-bezier(0.19, 1, 0.22, 1); }
-  /* line 279, main.scss */
+  /* line 306, main.scss */
   .splash .btn2:hover svg rect {
     stroke-width: 5;
     stroke-dasharray: 35, 550;
     stroke-dashoffset: 60; }
-  /* line 286, main.scss */
+  /* line 313, main.scss */
   .splash .btn2:hover {
     color: #ffeb66;
     font-size: 18px;
@@ -239,7 +253,7 @@ main {
     font-weight: bold;
     background-color: transparent; }
 
-/* line 295, main.scss */
+/* line 322, main.scss */
 button {
   background-color: #ffeb66;
   border: none;
@@ -248,7 +262,7 @@ button {
   position: relative;
   text-align: center; }
 
-/* line 303, main.scss */
+/* line 330, main.scss */
 .currentLocation {
   width: 280px;
   height: 50px;
@@ -256,7 +270,7 @@ button {
   font-size: 28px;
   position: relative; }
 
-/* line 310, main.scss */
+/* line 337, main.scss */
 p {
   text-align: center;
   display: block;
@@ -264,7 +278,7 @@ p {
   color: #ffeb66;
   margin-bottom: 30px; }
 
-/* line 319, main.scss */
+/* line 346, main.scss */
 .base {
   color: white;
   font-size: 18px;
@@ -272,7 +286,7 @@ p {
   margin-bottom: 10px;
   margin-top: 10px; }
 
-/* line 326, main.scss */
+/* line 353, main.scss */
 i {
   display: block;
   text-align: center;
@@ -281,18 +295,18 @@ i {
   color: red;
   opacity: 0; }
 
-/* line 336, main.scss */
+/* line 363, main.scss */
 .weather {
   position: absolute;
   right: 80px;
   top: 200px; }
-  /* line 341, main.scss */
+  /* line 368, main.scss */
   .weather .weatherImg {
     display: block;
     width: 200px;
     height: auto;
     margin-bottom: 30px; }
-  /* line 348, main.scss */
+  /* line 375, main.scss */
   .weather b {
     display: inline-block;
     transform: translateY(50%);
@@ -300,26 +314,26 @@ i {
     font-weight: 300;
     margin-right: 20px;
     color: white; }
-  /* line 357, main.scss */
+  /* line 384, main.scss */
   .weather .f {
     vertical-align: middle;
     height: auto;
     width: 100px; }
 
-/* line 364, main.scss */
+/* line 391, main.scss */
 .albumCover {
   position: absolute;
   top: 280px;
   left: 80px;
   margin-bottom: 120px; }
 
-/* line 372, main.scss */
+/* line 399, main.scss */
 img {
   height: auto;
   width: 150px;
   border-radius: 5%; }
 
-/* line 381, main.scss */
+/* line 414, main.scss */
 .loading {
   position: fixed;
   left: 0px;
@@ -331,18 +345,18 @@ img {
   background-size: cover;
   opacity: 0; }
 
-/* line 393, main.scss */
+/* line 426, main.scss */
 .currentCity {
   opacity: 1;
   height: 50px; }
 
-/* line 400, main.scss */
+/* line 433, main.scss */
 .searchbox {
   width: 470px;
   height: 200px;
   margin: 0 auto; }
 
-/* line 407, main.scss */
+/* line 440, main.scss */
 input {
   font-size: 28px;
   height: 50px;
@@ -355,23 +369,23 @@ input {
   padding-right: 20px;
   outline: none; }
 
-/* line 421, main.scss */
+/* line 454, main.scss */
 *::-webkit-input-placeholder {
   color: #c7c7c7; }
 
-/* line 425, main.scss */
+/* line 458, main.scss */
 *:-moz-placeholder {
   color: #c7c7c7; }
 
-/* line 429, main.scss */
+/* line 462, main.scss */
 *::-moz-placeholder {
   color: #c7c7c7; }
 
-/* line 433, main.scss */
+/* line 466, main.scss */
 *:-ms-input-placeholder {
   color: #c7c7c7; }
 
-/* line 439, main.scss */
+/* line 472, main.scss */
 .button_base {
   margin: 0;
   border: 0;
@@ -383,20 +397,20 @@ input {
   height: 50px;
   cursor: default; }
 
-/* line 451, main.scss */
+/* line 484, main.scss */
 .button_update {
   width: 100px; }
 
-/* line 455, main.scss */
+/* line 488, main.scss */
 .button_base:hover {
   cursor: pointer; }
 
-/* line 459, main.scss */
+/* line 492, main.scss */
 .b03_skewed_slide_in {
   overflow: hidden;
   border: #ffeb66 solid 1px; }
 
-/* line 464, main.scss */
+/* line 497, main.scss */
 .b03_skewed_slide_in div {
   position: absolute;
   text-align: center;
@@ -407,12 +421,12 @@ input {
   -moz-box-sizing: border-box;
   padding: 10px; }
 
-/* line 475, main.scss */
+/* line 508, main.scss */
 .b03_skewed_slide_in div:nth-child(1) {
   color: #ffeb66;
   background-color: rgba(0, 0, 0, 0.1); }
 
-/* line 480, main.scss */
+/* line 513, main.scss */
 .b03_skewed_slide_in div:nth-child(2) {
   background-color: #ffeb66;
   width: 230px;
@@ -423,7 +437,7 @@ input {
   -webkit-transform: translate(-250px, 0px) skewX(-30deg);
   -moz-transform: translate(-250px, 0px) skewX(-30deg); }
 
-/* line 491, main.scss */
+/* line 524, main.scss */
 .b03_skewed_slide_in div:nth-child(3) {
   color: #384c99;
   font-style: bold;
@@ -434,7 +448,7 @@ input {
   -webkit-transition: left 0.2s ease;
   -moz-transition: left 0.2s ease; }
 
-/* line 502, main.scss */
+/* line 535, main.scss */
 .b03_skewed_slide_in:hover div:nth-child(2) {
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
@@ -443,14 +457,14 @@ input {
   -webkit-transform: translate(-15px, 0px) skewX(-30deg);
   -moz-transform: translate(-15px, 0px) skewX(-30deg); }
 
-/* line 511, main.scss */
+/* line 544, main.scss */
 .b03_skewed_slide_in:hover div:nth-child(3) {
   left: 0px;
   transition: left 0.30000000000000004s ease;
   -webkit-transition: left 0.30000000000000004s ease;
   -moz-transition: left 0.30000000000000004s ease; }
 
-/* line 520, main.scss */
+/* line 553, main.scss */
 .loader {
   width: 250px;
   height: 80px;
@@ -460,12 +474,12 @@ input {
   margin: -25px -125px;
   list-style-type: none; }
 
-/* line 532, main.scss */
+/* line 565, main.scss */
 .loader li {
   float: left;
   position: relative; }
 
-/* line 538, main.scss */
+/* line 571, main.scss */
 .circle {
   width: 40px;
   height: 40px;
@@ -475,7 +489,7 @@ input {
   border-left: 0;
   border-right: 0; }
 
-/* line 548, main.scss */
+/* line 581, main.scss */
 .ball {
   position: absolute;
   content: "";
@@ -490,37 +504,37 @@ input {
   overflow: visible;
   box-shadow: 0 -15px 0 0 rgba(255, 255, 255, 0.15), 0 -10px 0 0 rgba(255, 255, 255, 0.1), 0 -5px 0 0 rgba(255, 255, 255, 0.05); }
 
-/* line 563, main.scss */
+/* line 596, main.scss */
 .circle {
   -webkit-animation: rotate 1.5s cubic-bezier(0.45, 0, 1, 1) infinite;
   animation: rotate 1.5s cubic-bezier(0.45, 0, 1, 1) infinite; }
 
-/* line 568, main.scss */
+/* line 601, main.scss */
 .ball {
   -webkit-animation: fall 1.5s cubic-bezier(0.95, 0, 1, 1) infinite;
   animation: fall 1.5s cubic-bezier(0.95, 0, 1, 1) infinite; }
 
-/* line 573, main.scss */
+/* line 606, main.scss */
 .loader li:nth-child(1) div {
   -webkit-animation-delay: 100ms;
   animation-delay: 100ms; }
 
-/* line 578, main.scss */
+/* line 611, main.scss */
 .loader li:nth-child(2) div {
   -webkit-animation-delay: 200ms;
   animation-delay: 200ms; }
 
-/* line 583, main.scss */
+/* line 616, main.scss */
 .loader li:nth-child(3) div {
   -webkit-animation-delay: 300ms;
   animation-delay: 300ms; }
 
-/* line 588, main.scss */
+/* line 621, main.scss */
 .loader li:nth-child(4) div {
   -webkit-animation-delay: 400ms;
   animation-delay: 400ms; }
 
-/* line 593, main.scss */
+/* line 626, main.scss */
 .loader li:nth-child(5) div {
   -webkit-animation-delay: 500ms;
   animation-delay: 500ms; }
@@ -585,24 +599,24 @@ input {
     box-shadow: 0 -15px 0 0 rgba(255, 255, 255, 0.15), 0 -10px 0 0 rgba(255, 255, 255, 0.1), 0 -5px 0 0 rgba(255, 255, 255, 0.05);
     -webkit-transform: translatey(30px);
     opacity: 0; } }
-/* line 686, main.scss */
+/* line 719, main.scss */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   background-color: #F5F5F5; }
 
-/* line 693, main.scss */
+/* line 726, main.scss */
 ::-webkit-scrollbar {
   width: 12px;
   background-color: #bcd4fb; }
 
-/* line 699, main.scss */
+/* line 732, main.scss */
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #bcd4fb; }
 
-/* line 707, main.scss */
+/* line 740, main.scss */
 div.playit {
   width: 30px;
   float: right;
@@ -610,12 +624,12 @@ div.playit {
   border-radius: 50%;
   margin-right: 5px;
   margin-top: -4px; }
-  /* line 718, main.scss */
+  /* line 751, main.scss */
   div.playit img {
     margin-top: -3px;
     display: inline-block; }
 
-/* line 728, main.scss */
+/* line 761, main.scss */
 .playit:hover img {
   -webkit-transform: scale(1.5, 1.5);
   /* Safari */

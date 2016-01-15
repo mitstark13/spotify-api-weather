@@ -2,7 +2,7 @@
 //Splash screen buttons and inputs
 $('.splash .btn2').click(function() {
   $('.splash').css('display', 'none');
-  $('section, aside, header').removeClass('hide');
+  $('section, aside, header, main').removeClass('hide');
   getWeatherInfoCity(cityChoice);
   weatherToMusic();
 });
@@ -10,14 +10,16 @@ $('.splash .btn2').click(function() {
 $('.newCity').click(function() {
   if ($(this).siblings('input').val().indexOf(',') != -1) {
     var newCity = $(this).siblings('input').val();
+    cityChoice = $(this).siblings('input').val();
     $('.splash i').css('opacity', '0');
     getWeatherInfoCity(newCity);
     $('.splash').css('display', 'none');
-    $('section, aside, header').removeClass('hide');
+    $('section, aside, header, main').removeClass('hide');
     weatherToMusic();
   } else {
     $('.splash i').css('opacity', '1');
   };
+
 })
 
 var templateSource = document.getElementById('results-template').innerHTML,
@@ -75,6 +77,7 @@ function showWeatherInfo(data) {
   weather = data.weather[0].main;
   weatherDescription = data.weather[0].description;
   hour = new Date($.now()).getHours();
+  
   if (currentCity) {
     $('.loader, .loading').fadeOut(100);
   }
@@ -102,8 +105,11 @@ function showWeatherInfo(data) {
     $('main').css('background-image', 'url(img/cloudbackground.jpg)')
   }
   setTitle(data.name);
+
+
 }
 
+var time;
 //Set Title
 function setTitle(city) {
   if (hour < 12) {
@@ -116,7 +122,7 @@ function setTitle(city) {
     time = "Late-Night"
   }
   $('.playlist .title').text(city + "'s " + time + ' ' + weather + ' Mix');
-  getCityPhoto();
+
 }
 
 
@@ -196,6 +202,7 @@ function weatherToMusic() {
   }
 
   getSpotifyPlaylist();
+  getCityPhoto();
 }
 
 var previews = [];
@@ -226,6 +233,7 @@ function getSpotifyPlaylist() {
           $('#results li:first-child img').attr('src', 'img/pause.png');
       }
   });
+  
 }
 
 //Get album cover on click of play button
@@ -243,6 +251,7 @@ $(document).on('click','#results div',function(){
   $('.playpauseblue').attr('src', 'img/playblue.png');
   $(this).find('.playpause').attr('src', 'img/pause.png');
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
+  
   getSpotifyId(track, artist);
   playPreview(track, artist);
 });
@@ -270,7 +279,9 @@ function getAlbumCover(id) {
       $('#albumCover').attr('src', pic);
       $(".albumCover img").reflect();
     }
+
   })
+
 };
 
 function playPreview(track, artist) {
@@ -289,19 +300,21 @@ function playPreview(track, artist) {
   })
 }
 
+var randomnumber =  Math.round(Math.random()*3) + 1
 function getCityPhoto() {
-$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
   {
-    tags:  currentCity,
-    geo_context: 2,
-    accuracy: 11,
-    tagmode: "any",
-    format: "json"
+    
+    
+    tags: "city"+", "+cityChoice+", "+time,
+    tag_mode:  "all",
+    format: "json",
   },
   function(data) {
     console.log(data);
     $.each(data.items, function(i,item){
-      $("<img />").attr("src", item.media.m).prependTo(".logo");
+      // $("<img />").attr("src", item.media.m).prependTo(".options");
+      $('.photoHolder').css('background-image','url(' + data.items[randomnumber].media.m.replace('_m.','_b.')+ ')');
       if ( i == 3 ) return false;
     });
   });
