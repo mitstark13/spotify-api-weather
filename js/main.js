@@ -1,20 +1,22 @@
 
 //Splash screen buttons and inputs
 $('.splash .btn2').click(function() {
+  $('.loading').fadeIn(700);
   $('.splash').css('display', 'none');
-  $('section, aside, header, main').removeClass('hide');
   getWeatherInfoCity(cityChoice);
   weatherToMusic();
 });
 
 $('.newCity').click(function() {
+  $('.loading').fadeIn(700);
+  $('.photoHolder').css('background-image', 'url()');
   if ($(this).siblings('input').val().indexOf(',') != -1) {
     var newCity = $(this).siblings('input').val();
     cityChoice = $(this).siblings('input').val();
     $('.splash i').css('opacity', '0');
     getWeatherInfoCity(newCity);
     $('.splash').css('display', 'none');
-    $('section, aside, header, main').removeClass('hide');
+    
     weatherToMusic();
   } else {
     $('.splash i').css('opacity', '1');
@@ -79,49 +81,64 @@ function showWeatherInfo(data) {
   hour = new Date($.now()).getHours();
   
   if (currentCity) {
-    $('.loader, .loading').fadeOut(100);
+    $('.loader').fadeOut(100);
   }
 
   if ((weather == 'Clear') || (weather == 'Haze')) {
-    weather = 'Sunny';
-    if (hour < 18) {
+    if (hour < 18 && hour > 5) {
+      weather = 'Sunny';
       $('.weatherImg').attr('src', 'img/sun.png');
-      $('main').css('background-image', 'url(img/sunbackground.jpg)')
+      $('.backWeather').css('background-image', 'url(img/sunbackground.jpg)')
     } else {
+      weather = 'Clear';
       $('.weatherImg').attr('src', 'img/moon.png');
-      $('main').css('background-image', 'url(img/nightbackground.jpg)')
+      $('.backWeather').css('background-image', 'url(img/nightbackground.jpg)')
     }
-  } else if (weather == 'Rain') {
+  } else if ((weather == 'Rain') || (weather == 'Mist')) {
     $('.weatherImg').attr('src', 'img/rain.png');
-    $('main').css('background-image', 'url(img/rainbackground.jpg)')
+    $('.backWeather').css('background-image', 'url(img/rainbackground.jpg)')
   } else if (weather == 'Snow') {
     $('.weatherImg').attr('src', 'img/snow.png');
-    $('main').css('background-image', 'url(img/snowbackground.jpg)')
+    $('.backWeather').css('background-image', 'url(img/snowbackground.jpg)')
   } else if (weather == 'Fog') {
     $('.weatherImg').attr('src', 'img/cloud.png');
-    $('main').css('background-image', 'url(img/cloudbackground.jpg)')
+    $('.backWeather').css('background-image', 'url(img/cloudbackground.jpg)')
   } else {
-    $('.weatherImg').attr('src', 'img/cloud.png');
-    $('main').css('background-image', 'url(img/cloudbackground.jpg)')
+    if (hour < 18 && hour > 5) {
+      $('.weatherImg').attr('src', 'img/cloud.png');
+      $('.backWeather').attr('src', 'img/cloudbackground.jpg');
+      $('.backWeather').css('background-image', 'url(img/cloudbackground.jpg)')
+    } else {
+
+      $('.weatherImg').attr('src', 'img/cloud.png');
+      $('.backWeather').css('background-image', 'url(img/cloudnight.jpg)')
+    }
   }
   setTitle(data.name);
 
 
 }
-
+var dayNight
 var time;
 //Set Title
 function setTitle(city) {
-  if (hour < 12) {
+  if (hour < 5) {
+    time = "Late-Night";
+    dayNight = "night"
+  } else if (hour < 12) {
     time = "Morning";
+    dayNight = "day"
   } else if (hour < 18) {
     time = "Afternoon";
+    dayNight = "day"
   } else if (hour < 22) {
     time = "Evening"
+    dayNight = "night"
   } else {
     time = "Late-Night"
+    dayNight = "night"
   }
-  $('.playlist .title').text(city + "'s " + time + ' ' + weather + ' Mix');
+  $('.playlist .title').text(city + " " + time + ' ' + weather + ' Mix');
 
 }
 
@@ -130,6 +147,8 @@ var temp;
 var weather;
 var weatherDescription;
 var hour;
+var dayNight 
+
 
 
 // getLocation();
@@ -147,8 +166,8 @@ var variety = ((Math.random() * 0.7) + 0.2).toFixed(2);
 function weatherToMusic() {
   if ((weather == 'Rain') || (weather == 'Snow')) {
     genre = 'chamber pop';
-    genre2 = 'country rock';
-    genre3 = 'neo mellow';
+    genre2 = 'neo mellow';
+    genre3 = 'country';
     dance -= 0.2;
     energy -= 0.2;
   } else {
@@ -208,7 +227,9 @@ function weatherToMusic() {
 var previews = [];
 
 function getSpotifyPlaylist() {
-  $('.loading').fadeIn(1000);
+  
+
+
   $.ajax({
       url: echoURL + echoApiKey + "&genre=" + genre + "&genre=" + genre2 + "&genre=" + genre3 + "&genre=" + genre4 + "&genre=" + genre5,
       data: {
@@ -228,13 +249,19 @@ function getSpotifyPlaylist() {
           resultsPlaceholder.innerHTML = template(response);
           $('#results li').filter(":contains('(')").remove();
           getSpotifyId($('#results li:first-child p').html(), $('#results li:first-child b').html());
-          $('.loading').fadeOut(300);
-          playPreview($('#results li:first-child p').html(), $('#results li:first-child b').html());
-          $('#results li:first-child img').attr('src', 'img/pause.png');
+          $('section, aside, header, main').removeClass('hide');
+         setTimeout(function(){
+        $('.loading').fadeOut(700);
+    },1000);
+
+          // playPreview($('#results li:first-child p').html(), $('#results li:first-child b').html());
+          // $('#results li:first-child img').attr('src', 'img/pause.png');
       }
   });
   
 }
+
+ 
 
 //Get album cover on click of play button
 var playing = false;
@@ -248,7 +275,7 @@ $(document).on('click','#results div',function(){
   $('.equalizer').html(' ');
   $(this).siblings('.equalizer').html('<img  src="img/equalizer.gif" />');
   $('.playpause').attr('src', 'img/play.png');
-  $('.playpauseblue').attr('src', 'img/playblue.png');
+  $('.playpauseblue').attr('src', 'img/playblue.png'); 
   $(this).find('.playpause').attr('src', 'img/pause.png');
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
   
@@ -301,13 +328,16 @@ function playPreview(track, artist) {
 }
 
 var randomnumber =  Math.round(Math.random()*3) + 1
+
 function getCityPhoto() {
+ var cityShort = cityChoice.split(",")[0];
  $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
   {
     
     
-    tags: "city"+", "+cityChoice+", "+time,
+    tags: "skyline"+", "+cityShort+", "+dayNight,
     tag_mode:  "all",
+    sort: "relevance",
     format: "json",
   },
   function(data) {

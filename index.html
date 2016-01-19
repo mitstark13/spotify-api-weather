@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,700,300,900' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css">	
@@ -10,9 +11,9 @@
 	<script type="text/javascript" src="js/reflection.js"></script>
 	<title>atmosphere</title>
 </head>
-<div class="loading"></div>
-<body>
 
+<body>
+<div class="loading"></div>
 	<header class='hide options'>
 		<img src="img/atmosphere.png" alt="logo">
 		<div id="cityPhoto">
@@ -74,9 +75,10 @@
 	</section>
 
 	<main class='hide'>
-	<div style="width:1400px;  min-height: 800px; margin-top: 90px; position: absolute; background-size: cover; top: 0; right:0; opacity: .1;" class="photoHolder "></div>	
+	<div style="width: 100vw;  background-size: cover;" class="backWeather"></div>
+	<div style="height: 1200px; width: 100%; margin-top: 0px; position: absolute; background-size: cover; top: 0; position: absolute; right:0; opacity: .25;" class="photoHolder "></div>	
 		<section class='playlist hide'>
-			<div class='title'>Chicago Cloudy Afternoon Mix</div>
+			<h1 class='title'>Chicago Cloudy Afternoon Mix</h1>
 			<div class="btn">
 			  <svg>
 			    <rect x="0" y="0" fill="none" width="320" height="50"/>
@@ -133,7 +135,7 @@
 	    	{{#each response.songs}}
 	    		<li>
 	    			<p>{{title}}  </p>
-	    			<p class="bullet"> &#8226 </p>
+	    			<p class="bullet"> &nbsp&#8226 </p>
 	    			<b class='artist'>{{artist_name}}</b>
 	    			<div class='equalizer'></div>
 	    			<div  class="playit button_base b03_skewed_slide_in button_update newCity">

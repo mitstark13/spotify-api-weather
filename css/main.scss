@@ -9,7 +9,6 @@ $lightBlue: #bcd4fb;
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
 	-webkit-transition-property: all;
 	-webkit-transition-duration: .2s;
   	-moz-transition-timing-function: cubic-bezier(100,50,21,6);
@@ -37,25 +36,25 @@ header {
 	padding: 20px 60px;
 	background-size: 100%;
 	background-repeat: no-repeat;
+	position: fixed;
+	z-index: 55;
 	
 	.searchbox2 {
-		width: 45%;
+		width: 60%;
 		float: right;
-		
-		position: relative;
+		right: 1%;
+		position: absolute;
 		display: inline-block;
+		height: 60px;
 	}
 
 	#cityPhoto {
 	position: fixed;
 	top: 0;
 	left: 0;
+		
 
-
-	
-	img {
-		height: auto;
-		width: 150px;
+		
 
 	}
 }
@@ -68,34 +67,51 @@ header {
 
 	img {
 		display: inline-block;
-		height: 50px;
+		width: 200px;
+		
 		
 	}		
-}
 
 main {
-	padding: 40px 80px;
-	background-image: url('../img/cloudbackground.jpg');
-	background-size: cover;
-	min-height: 800px;
+	padding-top: 90px;
 	width: 100%;
 	height: auto;
+	position: relative;
 
 
+.backWeather {
+	
+
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	padding-left: -10px;
+}
 
 
 .playlist {
 	
-	z-index: 55;
+	z-index: 50;
+	display: inline-block;
+	width: 95%;
+	margin-top: 30px;
+	position: relative;
 
 
+	
 	.title {
-		font-size: 50px;
+		font-size: 4rem;
 		font-family: Dosis, sans-serif;
 		font-weight: bold;
 		text-align: center;
-		margin-bottom: 35px;
 		color: white;
+		width: 90%;
+		margin: 0 auto;
+		margin-bottom: 35px;
+		z-index: 50;
+		color: white;
+		position: relative;
+		
 	}
 
 	
@@ -150,10 +166,11 @@ main {
 
 #results {
 	position: relative;
-	width: 57%;
-	margin-left: 240px;
+	width: 58%;
+	margin-left: 24%;
 	height: 330px;
-	overflow-y: auto;
+
+
 
 	.active {
 		background-color: rgba(33,72,145,.4);
@@ -169,9 +186,11 @@ main {
 
 		li {
 			border-bottom: 1px solid $headerBlue;
-			padding: 8px 0px 8px 0px;
 			height: 40px;
-			width: 100%;
+			width: 80%;
+			list-style-type: none;
+			text-overflow: ellipsis;
+
 
 			.bullet {
 				font-size: 16px;
@@ -179,16 +198,24 @@ main {
 			}
 
 			p {
-				font-size: 20px;
+				font-size: 1.2em;
 				font-style: italic;
-				display: inline;
+				display: inline-block;
 				color: white;
+				padding-bottom: 3px;
+				padding-right: 2px;
+				
+  			
+
 			}
 
-			b {
-				font-size: 24px;
+			.artist {
+				font-size: 1.7em;
 				font-style: bold;
 				color: $lightBlue;
+				display: inline-block;
+				
+			
 
 			
 
@@ -227,21 +254,27 @@ main {
 
 .splash {
 	// display: none;
-	position: relative;
+	position: absolute;
 	height: 100vh;
 	width: 100vw;
 	background-image: url('../img/splash.jpg');
 	background-size: cover;
-	
+	overflow: hidden;
+
+
+
 	.logo {
-	height: 170px;
-    width: 540px;
-    margin: 60px 50% 0;
-    transform: translateX(-50%);
+    
+    padding-top: 5%;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    margin: 0 5%;
+   
 
 		img {
-			height: 170px;
-			width: 540px;
+			height: auto;
+			width: 40%;
 		}
 	}
 
@@ -253,6 +286,8 @@ main {
 		font-size: 1.4em;
 		margin-top: 20px;
 		margin-bottom: 20px;
+		display: block;
+		padding: 0 6%;
 	}
 
 	b {
@@ -263,6 +298,7 @@ main {
 		text-align: center;
 		display: block;
 		margin-bottom: 20px;
+
 	}
 
 	.options {
@@ -361,57 +397,66 @@ i {
 
 
 .weather {
-	position: absolute;
-	right: 80px;
-	top: 200px;
+	position: fixed;
+	right: -4%;
+	top: 250px;
+	width: 25%;
+	margin-right: 3%;
 
 	.weatherImg {
 		display: block;
-		width: 200px;
+		width: 60%;
 		height: auto;
 		margin-bottom: 30px;
+		
+
+
+
 	}
 	
 	b {
 		display: inline-block;
-		transform: translateY(50%);
-		font-size: 80px;
+		font-size: 5em;
 		font-weight: 300;
 		margin-right: 20px;
 		color: white;
+		vertical-align: middle;
+		position: relative;	
 	}
 
 	.f {
 		vertical-align: middle;
 		height: auto;
-		width: 100px;
+		width: 30%;
 	}
 }
-
 .albumCover {
-	position: absolute;
-	top: 280px;
-	left: 80px;
-	margin-bottom: 120px;
+	position: fixed;
+	top: 260px;
+	margin-left: 2%;
+	margin-right: 1%;
+	margin-bottom: 3%;
+	max-width: 200px;
+	overflow: hidden;
 
-}
+
 
 	img {
 		height: auto;
-		width: 150px;
+		width: 200px;
 		border-radius: 5%;
 		
 		
 	
 	}
+}
 
 
 
 
 
 
-
-.loading {
+body .loading {
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -420,8 +465,9 @@ i {
 	z-index: 999;
 	background: url('../img/loading.gif') 50% 50% no-repeat;
 	background-size: cover;
-	opacity: 0;
+    display: none;
 }
+
 
 .currentCity {
 	opacity: 1;
@@ -431,16 +477,17 @@ i {
 
 
 	.searchbox {
-			width: 470px;
+			width: 80%;
 			height: 200px;
 			margin: 0 auto;
+			padding-left: 10%;
 		}
 
 
 		input {
 			font-size: 28px;
 			height: 50px;
-			width: 400px;
+			width: 80%;
 			margin: 0 auto;
 			float: left;
 			background: white url('../img/search.png') no-repeat left center;
@@ -497,6 +544,7 @@ i {
 .b03_skewed_slide_in div {
     position: absolute;
     text-align: center;
+    overflow: hidden;
     width: 100%;
     height: 50px;
     box-sizing: border-box;
@@ -533,6 +581,7 @@ i {
 }
 
 .b03_skewed_slide_in:hover div:nth-child(2) {
+    overflow: hidden;
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -542,6 +591,7 @@ i {
 }
 
 .b03_skewed_slide_in:hover div:nth-child(3) {
+    overflow: hidden;
     left: 0px;
     transition: left 0.30000000000000004s ease;
     -webkit-transition: left 0.30000000000000004s ease;
@@ -555,7 +605,7 @@ i {
   height: 80px;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 52%;
   margin: -25px -125px;
   list-style-type: none;
 
@@ -648,7 +698,7 @@ i {
 
 @keyframes fall {
   0%, 20% {
-    transform: translatey(-30px);
+    transform: (-30px);
     opacity: 0;
   }
   20%,
@@ -716,25 +766,7 @@ i {
 
 
 
-::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
 
-::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: $lightBlue;
-}
-
-::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: $lightBlue;
-}
 
 
 div.playit {
@@ -743,7 +775,7 @@ div.playit {
 				height: 30px;
 				border-radius: 50%;
 				margin-right: 5px;
-				margin-top: -4px;
+				margin-top: 5px;
 				
 				
 				
@@ -765,3 +797,175 @@ div.playit {
 
 				}
 
+@media screen and (max-width: 1000px) {
+    
+    .splash .logo {
+    	width: 300px;
+    	margin: 0 auto;
+
+
+    	img {
+    		width: 100%;
+    		margin: 0 auto;
+    	}
+    }
+
+    .splash .loader {
+		top: 43%;
+
+	}
+
+    header .searchbox2 {
+        width: 70%;
+    
+		input {
+			width: 60%;
+		}
+    }
+	.playlist {
+		
+		
+	}
+	.albumCover {
+		display: none;
+	}
+	main #results {
+		margin-left: 4%;
+		width: 78%;
+	}
+
+	.weather b {
+		font-size: 3.5em;
+	}
+
+	.splash {
+
+		.options {
+			width: 100%;
+
+		.searchbox {
+			margin-left: -.2em;
+			width: 100%;
+		}
+		}
+	}
+}
+
+@media screen and (max-width: 650px) {
+
+	header .options {
+		height: 100px;
+	}
+    
+	.splash .loader {
+		top: 43%;
+
+	}
+
+	.splash input {
+		width: 65%;
+
+	}
+
+	
+
+	.playlist {
+		font-size: 100%;
+		
+		.title {
+			font-size: 3em	!important;
+		}
+	}
+	
+	header .searchbox2 {
+		display: none;
+
+	}
+
+	header img {
+		width: 50%;
+		margin: 0 auto;
+		text-align: center;
+		display: block;
+	}
+
+	.albumCover {
+		display: none;
+	}
+	main #results {
+		margin-left: 4%;
+		width: 100%;
+	}
+	main .weather  {
+
+		top:3px;
+		width: 100%;
+		z-index: 60;
+		position: fixed;
+		margin-top: 10px;
+		
+		.weatherImg {
+		top: 3px;
+		right: .2%;
+		z-index: 60;
+		max-width: 16%;
+		max-height: 80px;
+		display: inline-block;
+		}
+		b {
+		font-size: 2.2em;
+		right: 50px;
+		top: 0px;
+		float: right;
+		display: inline-block;
+		margin-top: 5px;
+		}
+		.f {
+		width: 8%;
+		margin-top: 10px;
+		float: right;
+		margin-right: -40px;
+		}
+	}
+
+	main #results ul li {
+		width: 100%;
+		height: 60px;
+		
+		p {
+			display: block;
+			margin-bottom: 0;
+			padding-top: 3px;
+			right: 0;
+			text-align: left;
+		}
+
+		.bullet {
+			display: none;
+		}
+
+		.artist {
+			display: block;
+			text-align: left;
+			margin-top: -8px;
+		}
+		
+		.playit {
+			margin-top: -40px;
+		}
+		} 
+	
+
+	.splash {
+		
+
+		.options {
+			width: 100%;
+
+		.searchbox {
+			margin-left: 1em;
+			width: 100%;
+		}
+		}
+	}
+}
