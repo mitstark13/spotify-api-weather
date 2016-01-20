@@ -167,7 +167,7 @@ function weatherToMusic() {
   if ((weather == 'Rain') || (weather == 'Snow')) {
     genre = 'chamber pop';
     genre2 = 'neo mellow';
-    genre3 = 'country';
+    genre3 = 'country'  ;
     dance -= 0.2;
     energy -= 0.2;
   } else {
@@ -292,12 +292,16 @@ function getSpotifyId(track, artist) {
       var string = JSON.stringify(data);
       var spotID = string.split("spotify:artist:");
       var finalId = spotID[1].split('"')[0];
-      getAlbumCover(finalId);
+      
+        getAlbumCover(finalId);
+
+
     }
   });
 }
 
 function getAlbumCover(id) {
+  
   $.ajax({
     url: "https://api.spotify.com/v1/artists/" + id,
 

@@ -189,7 +189,9 @@ main {
 			height: 40px;
 			width: 80%;
 			list-style-type: none;
-			text-overflow: ellipsis;
+			 white-space: nowrap;
+ 			overflow: hidden;
+  			text-overflow: ellipsis;
 
 
 			.bullet {
