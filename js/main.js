@@ -267,11 +267,14 @@ function getSpotifyPlaylist() {
 var playing = false;
 
 
-$(document).on('click','#results div',function(){
+$(document).on('click','.playit',function(){
+  $('.albumCover').css('opacity', '0');
+    var track = $(this).siblings('p').html();
+  var artist = $(this).siblings('b').html();
+  playPreview(track, artist, $(this).parent());
   $('li').removeClass('active');
   $(this).parent().addClass('active');
-  var track = $(this).siblings('p').html();
-  var artist = $(this).siblings('b').html();
+
   $('.equalizer').html(' ');
   $(this).siblings('.equalizer').html('<img  src="img/equalizer.gif" />');
   $('.playpause').attr('src', 'img/play.png');
@@ -280,7 +283,7 @@ $(document).on('click','#results div',function(){
   $(this).find('.playpauseblue').attr('src', 'img/pauseblue.png');
   
   getSpotifyId(track, artist);
-  playPreview(track, artist);
+
 });
 
 function getSpotifyId(track, artist) {
@@ -307,26 +310,38 @@ function getAlbumCover(id) {
 
     success: function(data) {
       var pic = data.images[0].url;
+
       $('#albumCover').attr('src', pic);
       $(".albumCover img").reflect();
+      $('.albumCover').fadeTo( "slow", 1 );
     }
+   
 
   })
 
 };
 
-function playPreview(track, artist) {
+function playPreview(track, artist, li) {
   $.ajax({
     url: "https://api.spotify.com/v1/search?q=track:" + track + "&artist:" + artist + "&type=track",
 
     success: function(response) {
       console.log(response.tracks.items[0].preview_url)
-      if (playing) {
+      if (playing == true) {
         audioObject.pause();
+        audioObject = '';
+        playing = false;
+        
+          if(li.className = 'active') {
+              audioObject = new Audio(response.tracks.items[0].preview_url);
+              audioObject.play();
+              playing = true;
+          }
       }
-      audioObject = new Audio(response.tracks.items[0].preview_url);
+      else {audioObject = new Audio(response.tracks.items[0].preview_url);
       audioObject.play();
       playing = true;
+    }
     }
   })
 }

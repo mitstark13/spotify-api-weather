@@ -132,11 +132,18 @@ main {
 	  background-color: rgba(0,0,0,.1);
 	  margin-bottom: 20px;	
 	  
+	  a text {
+	  	color: $yellow;
+	  	text-decoration: none !important;
+	  }
+
 	}
 	.btn svg {
 	  position: absolute;
 	  top: 0; left: 0;
 	  width: 400px
+
+
 	}
 	.btn svg rect {
 	  fill: none;
@@ -150,6 +157,7 @@ main {
 }
 
 .btn:hover svg rect {
+  overflow: hidden;
   stroke-width: 5;
   stroke-dasharray: 35, 550;
   stroke-dashoffset: 60;
@@ -157,6 +165,7 @@ main {
 }
 
 .btn:hover {
+  overflow: hidden;
   color: $yellow;
   font-size:18px;
   letter-spacing:1px;
@@ -234,8 +243,10 @@ main {
 				}
 
 			}
+			
 
 			img {
+				overflow: hidden;
 				vertical-align: middle;
 				height: auto;
 				width: 10px;
@@ -246,6 +257,7 @@ main {
 			}
 
 			img:first-of-type {
+				overflow: hidden;
 				margin-left: 15px;
 				
 			}
@@ -310,6 +322,9 @@ main {
 		margin: 0 auto;
 		position: relative;
 	}
+
+
+
 	.btn2 {
 	  position: relative;
 	  display: block;
@@ -544,6 +559,7 @@ body .loading {
 }
 
 .b03_skewed_slide_in div {
+	overflow: hidden;
     position: absolute;
     text-align: center;
     overflow: hidden;
@@ -556,14 +572,16 @@ body .loading {
 }
 
 .b03_skewed_slide_in div:nth-child(1) {
+    overflow: hidden;
     color: $yellow;
     background-color: rgba(0,0,0,.1);;
 }
 
 .b03_skewed_slide_in div:nth-child(2) {
+    overflow: hidden;
     background-color:  $yellow;
     width: 230px;
-    transition: all 0.2s ease;
+    transition: all 0.05s ease;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     transform: translate(-250px, 0px) skewX(-30deg);
@@ -572,6 +590,7 @@ body .loading {
 }
 
 .b03_skewed_slide_in div:nth-child(3) {
+    overflow: hidden;
     color: $headerBlue;
     font-style: bold;
     font-size: 18px;
@@ -775,7 +794,6 @@ div.playit {
 				width: 30px;
 				float: right;
 				height: 30px;
-				border-radius: 50%;
 				margin-right: 5px;
 				margin-top: 5px;
 				
@@ -795,6 +813,7 @@ div.playit {
 					img {
 						-webkit-transform: scale(1.5,1.5); /* Safari */
     				    transform: scale(1.5,1.5);
+    				    overflow: hidden;
 					}
 
 				}
@@ -829,7 +848,7 @@ div.playit {
 		
 	}
 	.albumCover {
-		display: none;
+		display: none !important;
 	}
 	main #results {
 		margin-left: 4%;
@@ -860,7 +879,7 @@ div.playit {
 	}
     
 	.splash .loader {
-		top: 43%;
+		top: 46%;
 
 	}
 
@@ -885,14 +904,14 @@ div.playit {
 	}
 
 	header img {
-		width: 50%;
+		width: 180px;
 		margin: 0 auto;
-		text-align: center;
-		display: block;
+		left: 0;
+		margin-left: -50px;
 	}
 
 	.albumCover {
-		display: none;
+		display: none !important;
 	}
 	main #results {
 		margin-left: 4%;
@@ -908,15 +927,16 @@ div.playit {
 		
 		.weatherImg {
 		top: 3px;
-		right: .2%;
+		float: right;
+		margin-right: 4%;
 		z-index: 60;
 		max-width: 16%;
-		max-height: 80px;
+		max-height: 70px;
 		display: inline-block;
 		}
 		b {
 		font-size: 2.2em;
-		right: 50px;
+		right: 8%;
 		top: 0px;
 		float: right;
 		display: inline-block;
@@ -965,7 +985,7 @@ div.playit {
 			width: 100%;
 
 		.searchbox {
-			margin-left: 1em;
+			margin-left: .5em;
 			width: 100%;
 		}
 		}
